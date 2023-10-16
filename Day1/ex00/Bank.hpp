@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/16 15:33:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:09:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,24 @@ class Bank
 		int	liquidity;
 		std::vector<Account *> clientAccounts;
 
-	public:
-		Bank() :
-			liquidity(0)
+		//getters
+		int getLiquidity() const
 		{
-
+			return (liquidity);
 		}
-}
+
+		std::vector<Account *> clientAccounts
+		{
+			return (clientAccounts)
+		}
+
+	public:
+		//setters
+		void setBank(int newLiquidity, std::vector<Account *> &newlientAccounts)
+		{
+			liquidity = newLiquidity;
+			clientAccount.push_back(newlientAccounts);
+		}
+};
 
 #endif

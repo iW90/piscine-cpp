@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 16:40:12 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:56:26 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	Bank
 		int			getLiquidity(void) const;
 		
 		//setters
-		Account&	createAccount(int id, int value);
+		Account*	createAccount(int id, int value);
 		void		deleteAccount(int id);
 		void		modifyAccount(int id, int newValue);
 

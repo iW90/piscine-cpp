@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:35 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 16:36:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:57:08 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ const Account& Bank::operator[](int accountId) const
 }
 
 // Método para criar uma nova conta
-Account& Bank::createAccount(int id, int value)
+Account* Bank::createAccount(int id, int value)
 {
 	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
 		if ((*it)->getId() == id)
 			throw std::runtime_error("Account with the same ID already exists");
 	Account* newAccount = new Account(id, value);
 	clientAccounts.push_back(newAccount);
-	return *newAccount;
+	return newAccount;
 }
 
 // Método para modificar uma conta

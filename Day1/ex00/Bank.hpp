@@ -3,44 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/16 17:09:41 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/16 22:19:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BANK_H
-# define BANK_H
+#ifndef BANK_HPP
+# define BANK_HPP
 
-# include <iostream>
-# include <vector>
 # include "Account.hpp"
+# include <vector>
+# include <iostream>
 
-class Bank
+class	Bank
 {
 	private:
-		int	liquidity;
-		std::vector<Account *> clientAccounts;
-
-		//getters
-		int getLiquidity() const
-		{
-			return (liquidity);
-		}
-
-		std::vector<Account *> clientAccounts
-		{
-			return (clientAccounts)
-		}
+		int						liquidity;
+		std::vector<Account*>	clientAccounts;
 
 	public:
-		//setters
-		void setBank(int newLiquidity, std::vector<Account *> &newlientAccounts)
-		{
-			liquidity = newLiquidity;
-			clientAccount.push_back(newlientAccounts);
-		}
+		Bank(void);
+		~Bank(void);
+
+		const Account& operator[](int accountId) const;
+
+		void createAccount(int id, int value);
+		void deleteAccount(int id);
+		void modifyAccount(int id, int newValue);
+
+		void giveLoan(int id, int amount);
+
+		void depositMoney(int id, int amount);
+
+		friend std::ostream& operator<<(std::ostream& p_os, const Bank& p_bank);
+
 };
 
 #endif

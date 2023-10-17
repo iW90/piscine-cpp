@@ -3,43 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Account.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:30 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/16 16:35:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/16 22:25:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ACCOUNT_H
-# define ACCOUNT_H
+#ifndef ACCOUNT_HPP
+# define ACCOUNT_HPP
 
-# include <iostream>
-# include <vector>
-
-class Account
+class	Account
 {
 	private:
 		int	id;
 		int	value;
 
-		//getters
-		int getId() const
-		{
-			return (id);
-		}
-
-		int getValue() const
-		{
-			return (value);
-		}
+		//constructor
+		Account(int id, int value);
 
 	public:
-		//setters
-		void setAccount(int newId, int newValue)
-		{
-			id = newId;
-			value = newValue;
-		}
+		//getters
+		int	getId(void) const;
+		int	getValue(void) const;
+
+		//destructor
+		~Account(void);
 };
 
 #endif

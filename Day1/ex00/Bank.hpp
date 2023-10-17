@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/16 22:19:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:17:34 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,30 @@
 class	Bank
 {
 	private:
+		//atributos
 		int						liquidity;
 		std::vector<Account*>	clientAccounts;
 
 	public:
+		//construtor
 		Bank(void);
+
+		//destrutor
 		~Bank(void);
 
-		const Account& operator[](int accountId) const;
+		//getter
+		int		getLiquidity(void) const;
+		
+		//setter
+		void	createAccount(int id, int value);
+		void	deleteAccount(int id);
+		void	modifyAccount(int id, int newValue);
 
-		void createAccount(int id, int value);
-		void deleteAccount(int id);
-		void modifyAccount(int id, int newValue);
+		void	giveLoan(int id, int amount);
+		void	depositMoney(int id, int amount);
 
-		void giveLoan(int id, int amount);
-
-		void depositMoney(int id, int amount);
-
-		friend std::ostream& operator<<(std::ostream& p_os, const Bank& p_bank);
+		const Account&			operator[](int accountId) const;
+		friend std::ostream&	operator << (std::ostream& p_os, const Bank& p_bank);
 
 };
 

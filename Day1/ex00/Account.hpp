@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:30 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/16 22:25:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:31:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@
 class	Account
 {
 	private:
+	//atributos
 		int	id;
 		int	value;
 
 		//constructor
 		Account(int id, int value);
+
+		//friend
+		friend class	Bank;
 
 	public:
 		//getters

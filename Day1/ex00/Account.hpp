@@ -6,24 +6,28 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:30 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 11:31:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:40:38 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ACCOUNT_HPP
 # define ACCOUNT_HPP
 
+# include <iostream>
+
+class Bank;
+
 class	Account
 {
 	private:
-	//atributos
+		//atributtes
 		int	id;
 		int	value;
 
 		//constructor
 		Account(int id, int value);
 
-		//friend
+		//friends
 		friend class	Bank;
 
 	public:
@@ -33,6 +37,9 @@ class	Account
 
 		//destructor
 		~Account(void);
+
+		//operators
+		friend std::ostream& operator << (std::ostream& p_os, const Account& p_account);
 };
 
 #endif

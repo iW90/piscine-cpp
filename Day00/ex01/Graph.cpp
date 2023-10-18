@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:17:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/18 09:48:19 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:17:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Graph::Graph(Vector2 size) : size(size)
 {
-	if (size.x < 1 || size.y < 1)
+	if (size.x < 1 || size.y < 1 || size.x > I_MAX || size.y > I_MAX)
 	{
 		std::cerr << "Invalid size for the graph." << std::endl;
 		std::exit(1);

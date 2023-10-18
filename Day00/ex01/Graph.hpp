@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Graph.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:16:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 22:12:18 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/18 09:49:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,19 @@ struct Vector2
 class Graph
 {
 	private:
-		Vector2	dimensions;
+		//attributes
+		Vector2	size;
 		std::vector<std::vector<char> > grid;
 
 	public:
+		//getters
 		void	printGrid() const;
-		void	placeX(Vector2 p);
-		Graph(Vector2 dimensions);
+
+		//methods
+		void	putX(Vector2 p);
+
+		//constructor
+		Graph(Vector2 size);
 };
 
 #endif

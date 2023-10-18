@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:35 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 20:57:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:03:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,18 @@ Account* Bank::createAccount(int id, int value)
 void Bank::modifyAccount(int id, int newValue)
 {
 	std::map<int, Account*>::iterator it = clientAccounts.find(id);
-
 	if (it != clientAccounts.end())
 		it->second->value = newValue;
 	else
 		throw std::runtime_error("Account not found");
+}
+
+const Account& Bank::getAccountById(int id) const
+{
+	std::map<int, Account*>::const_iterator it = clientAccounts.find(id);
+	if (it != clientAccounts.end())
+		return *(it->second);
+	throw std::runtime_error("Account not found");
 }
 
 
@@ -94,7 +101,6 @@ void Bank::depositMoney(int id, int amount)
 		throw std::runtime_error("Account not found");
 }
 
-
 // Método para excluir uma conta
 void Bank::deleteAccount(int id)
 {
@@ -108,7 +114,6 @@ void Bank::deleteAccount(int id)
 	else
 		throw std::runtime_error("Account not found");
 }
-
 
 // Operador de inserção
 std::ostream& operator << (std::ostream& p_os, const Bank& p_bank)

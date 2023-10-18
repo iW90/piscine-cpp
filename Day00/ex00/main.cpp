@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:37:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 21:00:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:58:38 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ int main()
 		Bank bank = Bank(2000);
 		Account* accountA = bank.createAccount(0, 100);
 		Account* accountB = bank.createAccount(1, 100);
+		const Account& accountC = bank[0];
+		(void)accountC;
+		
+		const Account& accountD = bank.getAccountById(0);
+		std::cout << accountD << std::endl;
 
 		std::cout << "[init]" << std::endl;
 		std::cout << bank << std::endl;

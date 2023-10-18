@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bank.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 20:13:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:06:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ class	Bank
 		//getters
 		int			getLiquidity(void) const;
 		
-		//setters
-		Account*	createAccount(int id, int value);
-		void		deleteAccount(int id);
-		void		modifyAccount(int id, int newValue);
+		//methods
+		Account*		createAccount(int id, int value);
+		void			deleteAccount(int id);
+		void			modifyAccount(int id, int newValue);
+		const Account&	getAccountById(int id) const;
 
-		void		giveLoan(int id, int amount);
-		void		depositMoney(int id, int amount);
+		void			giveLoan(int id, int amount);
+		void			depositMoney(int id, int amount);
 
 		//operators
 		const Account&			operator[](int accountId) const;

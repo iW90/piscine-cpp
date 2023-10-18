@@ -6,20 +6,20 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:35 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 19:57:08 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:57:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bank.hpp"
 
 // Construtor
-Bank::Bank(int liquidity) : liquidity(liquidity), clientAccounts(0) {}
+Bank::Bank(int liquidity) : liquidity(liquidity) {}
 
 // Destrutor
 Bank::~Bank(void)
 {
-	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
-		delete *it;
+	for (std::map<int, Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
+		delete it->second;
 	clientAccounts.clear();
 }
 
@@ -30,99 +30,93 @@ int Bank::getLiquidity(void) const
 }
 
 // Método para buscar uma conta através da Id
-// CORRIGIR PARA BÔNUS
 const Account& Bank::operator[](int accountId) const
 {
-	for (std::vector<Account*>::const_iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
-	{
-		if ((*it)->getId() == accountId)
-			return *(*it);
-	}
+	std::map<int, Account*>::const_iterator it = clientAccounts.find(accountId);
+	if (it != clientAccounts.end())
+		return *(it->second);
 	throw std::runtime_error("Account not found");
 }
 
 // Método para criar uma nova conta
 Account* Bank::createAccount(int id, int value)
 {
-	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
-		if ((*it)->getId() == id)
-			throw std::runtime_error("Account with the same ID already exists");
+	if (clientAccounts.find(id) != clientAccounts.end())
+		throw std::runtime_error("Account with the same ID already exists");
 	Account* newAccount = new Account(id, value);
-	clientAccounts.push_back(newAccount);
+	clientAccounts[id] = newAccount;
 	return newAccount;
 }
 
 // Método para modificar uma conta
 void Bank::modifyAccount(int id, int newValue)
 {
-	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
-	{
-		if ((*it)->getId() == id)
-		{
-			(*it)->value = newValue;
-			return;
-		}
-	}
-	throw std::runtime_error("Account not found");
+	std::map<int, Account*>::iterator it = clientAccounts.find(id);
+
+	if (it != clientAccounts.end())
+		it->second->value = newValue;
+	else
+		throw std::runtime_error("Account not found");
 }
+
 
 // Método para conceder um empréstimo
 void Bank::giveLoan(int id, int amount)
 {
-	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
+	std::map<int, Account*>::iterator it = clientAccounts.find(id);
+
+	if (it != clientAccounts.end())
 	{
-		if ((*it)->getId() == id)
+		if (liquidity >= amount)
 		{
-			if (liquidity >= amount)
-			{
-				(*it)->value += amount;
-				liquidity -= amount;
-				return;
-			}
-			else
-				throw std::runtime_error("Bank does not have enough funds for the loan");
+			it->second->value += amount;
+			liquidity -= amount;
+			return;
 		}
+		else
+			throw std::runtime_error("Bank does not have enough funds for the loan");
 	}
-	throw std::runtime_error("Account not found");
+	else
+		throw std::runtime_error("Account not found");
 }
 
 // Método para depoistar o dinheiro
 void Bank::depositMoney(int id, int amount)
 {
-	for (std::vector<Account*>::iterator it = clientAccounts.begin(); it != clientAccounts.end(); ++it)
+	std::map<int, Account*>::iterator it = clientAccounts.find(id);
+
+	if (it != clientAccounts.end())
 	{
-		if ((*it)->getId() == id)
-		{
-			(*it)->value += amount;
-			liquidity += (0.05 * amount);
-			return;
-		}
+		it->second->value += (0.95 * amount);
+		liquidity += (0.05 * amount);
 	}
-	throw std::runtime_error("Account not found");
+	else
+		throw std::runtime_error("Account not found");
 }
 
+
 // Método para excluir uma conta
-// CORRIGIR PARA BÔNUS
 void Bank::deleteAccount(int id)
 {
-	for (size_t i = 0; i < clientAccounts.size(); ++i)
+	std::map<int, Account*>::iterator it = clientAccounts.find(id);
+
+	if (it != clientAccounts.end())
 	{
-		if (clientAccounts[i]->getId() == id)
-		{
-			delete clientAccounts[i];
-			clientAccounts.erase(clientAccounts.begin() + i);
-			return;
-		}
+		delete it->second;
+		clientAccounts.erase(it);
 	}
-	throw std::runtime_error("Account not found");
+	else
+		throw std::runtime_error("Account not found");
 }
+
 
 // Operador de inserção
 std::ostream& operator << (std::ostream& p_os, const Bank& p_bank)
 {
 	p_os << "Bank informations: " << std::endl;
 	p_os << "Liquidity: " << p_bank.getLiquidity() << std::endl;
-	for (std::vector<Account*>::const_iterator it = p_bank.clientAccounts.begin(); it != p_bank.clientAccounts.end(); ++it)
-		p_os << "[" << (*it)->getId() << "] - [" << (*it)->getValue() << "]" << std::endl;
+
+	for (std::map<int, Account*>::const_iterator it = p_bank.clientAccounts.begin(); it != p_bank.clientAccounts.end(); ++it)
+		p_os << "[" << it->second->getId() << "] - [" << it->second->getValue() << "]" << std::endl;
 	return p_os;
 }

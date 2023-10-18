@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:48:38 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/17 19:56:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:13:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BANK_HPP
 
 # include "Account.hpp"
-# include <vector>
+# include <map>
 # include <iostream>
 
 class	Bank
@@ -22,7 +22,8 @@ class	Bank
 	private:
 		//atributtes
 		int						liquidity;
-		std::vector<Account*>	clientAccounts;
+		//std::vector<Account*>	clientAccounts;
+		std::map<int, Account*>	clientAccounts;
 
 	public:
 		//constructor

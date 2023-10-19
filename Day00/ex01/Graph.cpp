@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:17:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 17:58:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:03:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,6 @@ void Graph::printGrid() const
 	std::cout << std::endl;
 	std::cout << "\n" << std::endl;
 }
-/*
-void Graph::printGrid() const
-{
-	for (int y = static_cast<int>(size.y) - 1; y >= 0; y--)
-	{
-		std::cout << y << ' ';
-		for (int x = 0; x < static_cast<int>(size.x); x++)
-			std::cout << grid[static_cast<int>(y)][static_cast<int>(x)] << ' ';
-		std::cout << std::endl;
-	}
-	std::cout << ' ' << ' ';
-	for (int x = 0; x < static_cast<int>(size.x); x++)
-		std::cout << x << ' ';
-	std::cout << std::endl;
-	std::cout << "\n" << std::endl;
-}
-*/
 
 void Graph::putX(Vector2 p)
 {

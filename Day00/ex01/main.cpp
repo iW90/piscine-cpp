@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:44:25 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 17:51:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:05:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	int		x, y;
 	
-	std::cout << "Enter the dimensions (x and y): ";
+	std::cout << "Enter the dimensions (x and y):\n";
 	std::cin >> x >> y;
 
 	Vector2 dimensions = {static_cast<float>(x), static_cast<float>(y)};

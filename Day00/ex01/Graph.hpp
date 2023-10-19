@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Graph.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 21:16:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/18 16:17:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:55:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <vector>
 # include <iostream>
 # include <cstdlib>
+# include <iomanip>
 
 # define I_MAX 2147483647.0
 
@@ -34,6 +35,7 @@ class Graph
 
 	public:
 		//getters
+		const	Vector2& getSize() const;
 		void	printGrid() const;
 
 		//methods

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:44:25 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/18 16:00:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:51:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Graph.hpp"
-#include "main.hpp"
 
 int main()
 {
@@ -22,9 +21,13 @@ int main()
 
 	Vector2 dimensions = {static_cast<float>(x), static_cast<float>(y)};
 	Graph graph(dimensions);
-	graph.printGrid();
 
-	std::cout << "\n" << std::endl;
+	// Acessar o tamanho do gráfico
+	const Vector2& size = graph.getSize();
+	std::cout << "Graph size: (" << size.x << ", " << size.y << ")\n\n";
+
+	// Imprimir gráfico vazio
+	graph.printGrid();
 
 	// Colocar coordenadas
 	Vector2 newVector = {12, 3.0};

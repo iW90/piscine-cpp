@@ -6,17 +6,16 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:26:51 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:46:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:08:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WORKER_HPP
 # define WORKER_HPP
 
-# include "Position.hpp"
-# include "Statistic.hpp"
 # include "Tool.hpp"
 # include <vector>
+# include <string>
 
 struct Position
 {

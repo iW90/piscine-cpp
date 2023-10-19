@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:24:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:46:58 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:10:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Shovel : public Tool
 	public:
 		Shovel(int uses);
 		~Shovel();
-		void use() override;
+		void use();
 		int getNumberOfUses() const;
 };
 

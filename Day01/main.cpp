@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:50:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:52:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:13:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 int main()
 {
+	Position pos; // Crie uma instância de Position
+	Statistic stats; // Crie uma instância de Statistic
+
 	// Create workers
-	Worker worker1;
-	Worker worker2;
-	Worker worker3;
+	Worker worker1(pos, stats);
+	Worker worker2(pos, stats);
+	Worker worker3(pos, stats);
 
 	// Create tools
-	Shovel shovel1;
-	Hammer hammer1;
+	Shovel shovel1(10);
+	Hammer hammer1(20);
 
 	// Add tools to workers
 	worker1.addTool(&shovel1);

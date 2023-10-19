@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:25:39 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:47:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:10:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Hammer : public Tool
 	public:
 		Hammer(int uses);
 		~Hammer();
-		void use() override;
+		void use();
 		int getNumberOfUses() const;
 };
 

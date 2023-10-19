@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:28:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:47:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:08:47 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define WORKSHOP_HPP
 
 # include "Worker.hpp"
-# include <vector>
 
 class Workshop
 {

@@ -6,11 +6,10 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:24:49 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:47:15 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:16:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Shovel.cpp
 #include "Shovel.hpp"
 
 Shovel::Shovel(int uses) : numberOfUses(uses) {}

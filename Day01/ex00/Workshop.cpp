@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Workshop.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:28:14 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:48:25 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 17:51:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,52 @@
 
 Workshop::Workshop() {}
 
-Workshop::~Workshop()
+Workshop::~Workshop() {}
+
+Worker* Workshop::getWorker(Worker* worker) const
 {
-	for (Worker* worker : workers)
-		delete worker;
+	for (size_t i = 0; i < workers.size(); ++i)
+		if (workers[i] == worker)
+			return (worker);
+	return (NULL);
+}
+	
+void Workshop::setWorker(Worker* worker)
+{
+	for (size_t i = 0; i < workers.size(); ++i)
+		if (workers[i] == worker)
+			return ;
+	workers.push_back(worker);
 }
 
-void Workshop::registerWorker(Worker* worker, const std::string& requiredToolType)
+void Workshop::addWorker(Worker* worker, ToolType toolType)
 {
-	if (worker->getToolOfType(requiredToolType))
-		workers.push_back(worker);
+	if (!worker)
+		return ;
+	for (size_t i = 0; i < workers.size(); ++i)
+	{
+		if (workers[i] == worker)
+		{
+			std::cout << "This worker is already in this workshop." << std::endl;
+			return ;
+		}
+	}
+	if (!toolType)
+		this->setWorker(worker);
+	else if (toolType == SHOVEL && getToolOfType<Shovel>(worker))
+		this->setWorker(worker);
+	else if (toolType == HAMMER && getToolOfType<Hammer>(worker))
+		this->setWorker(worker);
 	else
-		std::cout << "Worker does not have the required tool to join the workshop." << std::endl;
+		std::cout << "This worker does not have the right tool." << std::endl;
 }
 
-void Workshop::releaseWorker(Worker* worker)
+void Workshop::removeWorker(Worker* worker)
 {
-	workers.erase(std::remove(workers.begin(), workers.end(), worker), workers.end());
-}
-
-void Workshop::executeWorkDay()
-{
-	for (Worker* worker : workers)
-		worker->work();
+	if (!worker)
+		return ;
+	for (size_t i = 0; i < workers.size(); ++i)
+		if (workers[i] == worker)
+			return ;
+	std::cout << "This worker is not in this workshop." << std::endl;
 }

@@ -5,14 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:26:14 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 09:14:59 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 18:58:53 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 09:19:10 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Hammer.hpp"
 
-Hammer::Hammer(int uses) : numberOfUses(uses) {}
+Hammer::Hammer()
+{
+	numberOfUses = 0;
+	worker = 0;
+}
 
 Hammer::~Hammer() {}
 
@@ -21,13 +25,23 @@ int Hammer::getNumberOfUses() const
 	return numberOfUses;
 }
 
+Worker* Hammer::getWorker() const
+{
+	return worker;
+}
+
+void Hammer::setNumberOfUses(int uses)
+{
+	numberOfUses = uses;
+}
+
+void Hammer::setWorker(Worker* worker)
+{
+	this->worker = worker;
+}
+
 void Hammer::use()
 {
-	if (numberOfUses > 0)
-	{
-		std::cout << "Using hammer..." << std::endl;
-		numberOfUses--;
-	}
-	else
-		std::cout << "Hammer is worn out." << std::endl;
+	if (this->worker)
+		numberOfUses++;
 }

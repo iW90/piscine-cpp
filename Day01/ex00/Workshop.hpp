@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Workshop.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:28:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 09:08:47 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/20 10:35:17 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 16:37:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,31 @@
 # define WORKSHOP_HPP
 
 # include "Worker.hpp"
+# include <vector>
+# include <cstring>
+
+enum ToolType
+{
+	NONE,
+    SHOVEL,
+    HAMMER
+};
 
 class Workshop
 {
 	private:
-		std::vector<Worker*> workers;
-		std::string requiredToolType;
+		std::vector<Worker*>	workers;
 
 	public:
 		Workshop();
 		~Workshop();
-		void registerWorker(Worker* worker, const std::string& requiredToolType);
-		void releaseWorker(Worker* worker);
-		void executeWorkDay();
+
+		Worker*	getWorker(Worker* worker) const;
+		void	setWorker(Worker* worker);
+
+		void	removeWorker(Worker* worker);
+		void	addWorker(Worker* worker, ToolType toolType);
+		
 };
 
 #endif

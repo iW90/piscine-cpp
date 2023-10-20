@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:25:39 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 09:10:46 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 18:58:10 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/19 20:22:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,29 @@
 
 # include "Tool.hpp"
 
+class Worker;
+
 class Hammer : public Tool
 {
 	private:
-		int numberOfUses;
-
+		int		numberOfUses;
+		Worker*	worker;
+		
 	public:
-		Hammer(int uses);
+		// Construtor e destrutor
+		Hammer();
 		~Hammer();
+
+		// Getters
+		int		getNumberOfUses() const;
+		Worker*	getWorker() const;
+
+		// Setters
+		void	setNumberOfUses(int uses);
+		void	setWorker(Worker* worker);
+
+		// Implementação do método use
 		void use();
-		int getNumberOfUses() const;
 };
 
 #endif

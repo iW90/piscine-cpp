@@ -3,63 +3,91 @@
 /*                                                        :::      ::::::::   */
 /*   Worker.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:27:29 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:46:42 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 15:19:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Worker.cpp
 #include "Worker.hpp"
 
-Worker::Worker(const Position& pos, const Statistic& stats)
-	: coordonnee(pos), stat(stats) {}
+Worker::Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList)
+		: coordonnee(position), stat(statistics), tools(toolList) {}
 
-Worker::~Worker()
+Worker::~Worker() {}
+
+Statistic Worker::getStat() const
 {
-	for (Tool* tool : tools)
-		delete tool;
+	return stat;
 }
 
-void Worker::work() {}
-
-void Worker::giveTool(Tool* tool)
+void Worker::setStat(const Statistic& stats)
 {
-	tools.push_back(tool);
+	stat = stats;
 }
 
-Tool* Worker::takeTool(Tool* tool)
+Position Worker::getCoordonnee() const
 {
-	for (std::vector<Tool*>::iterator it = tools.begin(); it != tools.end(); ++it) {
-		if (*it == tool) {
-			tools.erase(it);
-			return *it;
-		}
-	}
-	return nullptr;
+	return coordonnee;
 }
 
-
-void Worker::addTool(Tool* tool)
+void Worker::setCoordonnee(const Position& pos)
 {
+	coordonnee = pos;
+}
+
+Tool* Worker::getTool(Tool* tool) const
+{
+	for (size_t i = 0; i < tools.size(); ++i)
+		if (tools[i] == tool)
+			return (tool);
+	std::cout << "This tool is not with this worker." << std::endl;
+	return (NULL);
+}
+
+const std::vector<Tool*> &Worker::getTools() const
+{
+	return (tools);
+}
+	
+void Worker::setTool(Tool* tool)
+{
+	for (size_t i = 0; i < tools.size(); ++i)
+		if (tools[i] == tool)
+			return ;
 	tools.push_back(tool);
 }
 
 void Worker::removeTool(Tool* tool)
 {
-	tools.erase(std::remove(tools.begin(), tools.end(), tool), tools.end());
-	delete tool;
+	for (size_t i = 0; i < tools.size(); ++i)
+	{
+		if (tools[i] == tool)
+		{
+			tool->setWorker(NULL);
+			tools.erase(tools.begin() + i);
+			return ;
+		}
+	}
+	std::cout << "This tool is not with this worker." << std::endl;
 }
 
-Tool* Worker::getToolOfType(const std::string& type)
+void Worker::addTool(Tool* tool)
 {
-	for (Tool* tool : tools)
+	if (!tool)
+		return ;
+	for (size_t i = 0; i < tools.size(); ++i)
 	{
-		if (dynamic_cast<Shovel*>(tool) && type == "Shovel")
-			return tool;
-		else if (dynamic_cast<Hammer*>(tool) && type == "Hammer")
-			return tool;
+		if (tools[i] == tool)
+		{
+			std::cout << "This tool is already with this worker." << std::endl;
+			return ;
+		}
 	}
-	return nullptr;
+	if (Worker* worker = tool->getWorker())
+		worker->removeTool(tool);
+	tool->setWorker(this);
+	setTool(tool);
 }
+

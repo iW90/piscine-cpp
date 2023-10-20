@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Worker.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:26:51 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 09:08:24 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 15:21:34 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define WORKER_HPP
 
 # include "Tool.hpp"
+# include "Shovel.hpp"
+# include "Hammer.hpp"
 # include <vector>
 # include <string>
+# include <iostream>
 
 struct Position
 {
@@ -33,19 +36,41 @@ struct Statistic
 class Worker
 {
 	private:
-		Position coordonnee;
-		Statistic stat;
-		std::vector<Tool*> tools;
+		Position			coordonnee;
+		Statistic			stat;
+		std::vector<Tool*>	tools;
 
 	public:
-		Worker(const Position& pos, const Statistic& stats);
+		Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList);
 		~Worker();
-		void giveTool(Tool* tool);
-		Tool* takeTool(Tool* tool);
-		void addTool(Tool* tool);
+
+		Statistic getStat() const;
+		void setStat(const Statistic& stats);
+
+		Position getCoordonnee() const;
+		void setCoordonnee(const Position& pos);
+
+		Tool* getTool(Tool* tool) const;
+		void setTool(Tool* tool);
+
+		const std::vector<Tool*> &getTools() const;
+
+		// Methods
 		void removeTool(Tool* tool);
-		Tool* getToolOfType(const std::string& type);
-		void work();
+		void addTool(Tool* tool);
 };
+
+template <typename T>
+T* getToolOfType(Worker *worker)
+{
+	const std::vector<Tool*> tools = worker->getTools();	
+	for (size_t i = 0; i < tools.size(); ++i)
+	{
+		T* tool = dynamic_cast<T*>(tools[i]);
+		if (tool != NULL)
+			return (tool);
+	}
+	return (NULL);
+}
 
 #endif

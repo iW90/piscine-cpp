@@ -3,51 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:50:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 09:13:16 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 17:51:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include <iostream>
+#include "Shovel.hpp"
+#include "Hammer.hpp"
+#include "Worker.hpp"
+#include "Workshop.hpp"
 
 int main()
 {
-	Position pos; // Crie uma instância de Position
-	Statistic stats; // Crie uma instância de Statistic
+	// Criando
+	
+	Tool* shovel = new Shovel;
+	Tool* hammer = new Hammer;
 
-	// Create workers
-	Worker worker1(pos, stats);
-	Worker worker2(pos, stats);
-	Worker worker3(pos, stats);
+	Position pos = {5, 6, 7};
+	Statistic stat = {42, 84};
+	std::vector<Tool*> tls;
+	Worker* worker1 = new Worker(pos, stat, tls);
+	Worker* worker2 = new Worker(pos, stat, tls);
 
-	// Create tools
-	Shovel shovel1(10);
-	Hammer hammer1(20);
+	Workshop* workshop1 = new Workshop;
+	Workshop* workshop2 = new Workshop;
+	
+	// Usando a ferramenta
+	shovel->use();
+	shovel->use();
+	hammer->use();
+	
+	// Acessando o número de usos da pá
+	int shovelUses = shovel->getNumberOfUses();
+	std::cout << "Número de usos da pá: " << shovelUses << std::endl;
 
-	// Add tools to workers
-	worker1.addTool(&shovel1);
-	worker2.addTool(&hammer1);
+	// Acessando o número de usos do martelo
+	int hammerUses = hammer->getNumberOfUses();
+	std::cout << "Número de usos do martelo: " << hammerUses << std::endl;
 
-	// Create a workshop that requires a shovel
-	Workshop workshop1;
-	workshop1.registerWorker(&worker1, "Shovel");
+	worker2->addTool(shovel);
+	shovel->use();
 
-	// Create another workshop that requires a hammer
-	Workshop workshop2;
-	workshop2.registerWorker(&worker2, "Hammer");
+	// Acessando o número de usos da pá
+	shovelUses = shovel->getNumberOfUses();
+	std::cout << "Número de usos da pá: " << shovelUses << std::endl;
+	std::cout << "Endereço de shovel: " << worker2->getTool(shovel) << std::endl;
+	
+	// Trocando a pá de trabalhador
+	worker1->addTool(shovel);
+	std::cout << "Endereço de shovel: " << worker1->getTool(shovel) << std::endl;
+	std::cout << "Endereço de shovel: " << worker2->getTool(shovel) << std::endl;
 
-	// Try to register worker3 in workshop1 (worker3 doesn't have the required tool)
-	workshop1.registerWorker(&worker3, "Shovel");
+	worker1->removeTool(shovel);
+	std::cout << "Endereço de shovel: " << worker1->getTool(shovel) << std::endl;
+	
+	worker1->addTool(shovel);
+	
+	Tool* shovelTool = getToolOfType<Shovel>(worker1);
+	std::cout << "Endereço de shovel (toolType): " << shovelTool << std::endl;
 
-	// Execute work for the workshops
-	workshop1.executeWorkDay();
-	workshop2.executeWorkDay();
+	workshop1->addWorker(worker1, NONE);
+	workshop2->addWorker(worker1, HAMMER);
+	
 
-	// Release workers from workshops
-	workshop1.releaseWorker(&worker1);
-	workshop2.releaseWorker(&worker2);
+
+
+	// Aggregation
+	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
+	delete worker1;
+	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
+	shovelUses = shovel->getNumberOfUses();
 
 	return 0;
 }

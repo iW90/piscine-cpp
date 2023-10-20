@@ -5,9 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:23:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:49:24 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/19 19:17:39 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 09:15:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Tool.hpp"
+
+Tool::Tool() {}
+
+Tool::~Tool() {}

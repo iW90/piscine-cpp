@@ -3,20 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Tool.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 08:23:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 08:23:50 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/20 15:41:20 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/20 15:42:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOOL_HPP
 # define TOOL_HPP
 
+class Worker;
+
 class Tool
 {
 	public:
-		virtual void use() = 0;
+		// Construtor e destrutor
+		Tool();
+		virtual ~Tool();
+
+		// Métodos virtuais puros (abstratos) que devem ser implementados pelas classes derivadas
+		virtual void	use() = 0;
+
+		virtual Worker* getWorker() const = 0;
+		virtual void	setWorker(Worker* worker) = 0;
+		
+		virtual int		getNumberOfUses() const = 0;
+		virtual void	setNumberOfUses(int uses) = 0;
 };
 
 #endif

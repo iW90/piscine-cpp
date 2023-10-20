@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Worker.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 09:17:44 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:18:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Tool* Worker::getTool(Tool* tool) const
 	for (size_t i = 0; i < tools.size(); ++i)
 		if (tools[i] == tool)
 			return (tool);
+	std::cout << "This tool is not with this worker." << std::endl;
 	return (NULL);
 }
 	

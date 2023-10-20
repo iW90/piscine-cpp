@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 10:32:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:21:34 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define WORKER_HPP
 
 # include "Tool.hpp"
+# include "Shovel.hpp"
+# include "Hammer.hpp"
 # include <vector>
 # include <string>
 # include <iostream>
-
-class Tool;
 
 struct Position
 {
@@ -53,12 +53,24 @@ class Worker
 		Tool* getTool(Tool* tool) const;
 		void setTool(Tool* tool);
 
+		const std::vector<Tool*> &getTools() const;
+
 		// Methods
 		void removeTool(Tool* tool);
 		void addTool(Tool* tool);
-
-		template <typename ToolType>
-		ToolType* getToolOfType();
 };
+
+template <typename T>
+T* getToolOfType(Worker *worker)
+{
+	const std::vector<Tool*> tools = worker->getTools();	
+	for (size_t i = 0; i < tools.size(); ++i)
+	{
+		T* tool = dynamic_cast<T*>(tools[i]);
+		if (tool != NULL)
+			return (tool);
+	}
+	return (NULL);
+}
 
 #endif

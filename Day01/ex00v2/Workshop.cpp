@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 12:10:19 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:25:45 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ void Workshop::addWorker(Worker* worker, Tool* tool)
 	}
 	if (!tool)
 		this->setWorker(worker);
-	//else if (!worker->getTool(tool))
-	//	std::cout << "This worker does not have the right tool." << std::endl;
-	//verificar com o outro bonus se ele possui ferramenta de determinado tipo
+	else if (!getToolOfType<Shovel>(worker))
+		std::cout << "This worker does not have the right tool." << std::endl;
 	else
 		this->setWorker(worker);
 }

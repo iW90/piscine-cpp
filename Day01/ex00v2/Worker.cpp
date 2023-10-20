@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 11:25:14 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:19:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ Tool* Worker::getTool(Tool* tool) const
 			return (tool);
 	std::cout << "This tool is not with this worker." << std::endl;
 	return (NULL);
+}
+
+const std::vector<Tool*> &Worker::getTools() const
+{
+	return (tools);
 }
 	
 void Worker::setTool(Tool* tool)
@@ -86,14 +91,3 @@ void Worker::addTool(Tool* tool)
 	setTool(tool);
 }
 
-template <typename ToolType>
-ToolType* Worker::getToolOfType()
-{
-	for (size_t i = 0; i < tools.size(); ++i)
-	{
-		ToolType* tool = dynamic_cast<ToolType*>(tools[i]);
-		if (tool != NULL)
-			return (tool);
-	}
-	return (NULL);
-}

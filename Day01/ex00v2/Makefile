@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 09:04:17 by inwagner          #+#    #+#              #
-#    Updated: 2023/10/19 21:57:03 by inwagner         ###   ########.fr        #
+#    Updated: 2023/10/20 15:17:25 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

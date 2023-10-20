@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 10:22:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:26:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,15 @@ int main()
 	worker1->addTool(&shovel);
 	std::cout << "Endereço de shovel: " << worker1->getTool(&shovel) << std::endl;
 	std::cout << "Endereço de shovel: " << worker2->getTool(&shovel) << std::endl;
-	
-	
 
-
+	worker1->removeTool(&shovel);
+	std::cout << "Endereço de shovel: " << worker1->getTool(&shovel) << std::endl;
+	
+	worker1->addTool(&shovel);
+	// CORRIGIR
+	//Tool* shovelTool = worker1->getToolOfType<Shovel>();
+	//std::cout << "Endereço de shovel: " << &shovelTool << std::endl;
+	
 
 
 
@@ -75,14 +80,13 @@ int main()
 	shovelUses = shovel.getNumberOfUses();
 
 	
-
+	//	std::cout << "This worker is not in this workshop." << std::endl;
 	
 	
 
 
 
 	
-	//Shovel* shovelTool = worker1.getToolOfType<Shovel>();
 	
 	return 0;
 }

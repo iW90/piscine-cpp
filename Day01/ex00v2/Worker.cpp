@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 10:18:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:25:14 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ Tool* Worker::getTool(Tool* tool) const
 	
 void Worker::setTool(Tool* tool)
 {
+	for (size_t i = 0; i < tools.size(); ++i)
+		if (tools[i] == tool)
+			return ;
 	tools.push_back(tool);
 }
 

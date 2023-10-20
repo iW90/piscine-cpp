@@ -6,13 +6,13 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 15:25:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:38:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Workshop.hpp"
 
-Tool* Workshop::getWorker(Worker* worker) const
+Worker* Workshop::getWorker(Worker* worker) const
 {
 	for (size_t i = 0; i < workers.size(); ++i)
 		if (workers[i] == worker)
@@ -28,7 +28,7 @@ void Workshop::setWorker(Worker* worker)
 	workers.push_back(worker);
 }
 
-void Workshop::addWorker(Worker* worker, Tool* tool)
+void Workshop::addWorker(Worker* worker, ToolType toolType)
 {
 	if (!worker)
 		return ;
@@ -40,12 +40,14 @@ void Workshop::addWorker(Worker* worker, Tool* tool)
 			return ;
 		}
 	}
-	if (!tool)
+	if (!toolType)
 		this->setWorker(worker);
-	else if (!getToolOfType<Shovel>(worker))
-		std::cout << "This worker does not have the right tool." << std::endl;
+	else if (toolType == SHOVEL && getToolOfType<Shovel>(worker))
+		this->setWorker(worker);
+	else if (toolType == HAMMER && getToolOfType<Hammer>(worker))
+		this->setWorker(worker);
 	else
-		this->setWorker(worker);
+		std::cout << "This worker does not have the right tool." << std::endl;
 }
 
 void Workshop::removeWorker(Worker* worker)

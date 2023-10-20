@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:17 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 12:12:23 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:37:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include "Worker.hpp"
 # include <vector>
+# include <cstring>
+
+enum ToolType
+{
+	NONE,
+    SHOVEL,
+    HAMMER
+};
 
 class Workshop
 {
@@ -29,5 +37,8 @@ class Workshop
 		void	setWorker(Worker* worker);
 
 		void	removeWorker(Worker* worker);
-		void	addWorker(Worker* worker, Tool* tool);
-}
+		void	addWorker(Worker* worker, ToolType toolType);
+		
+};
+
+#endif

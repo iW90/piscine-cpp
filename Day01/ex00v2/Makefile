@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 09:04:17 by inwagner          #+#    #+#              #
-#    Updated: 2023/10/20 15:17:25 by inwagner         ###   ########.fr        #
+#    Updated: 2023/10/20 15:57:48 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ FTS			:=	main.cpp \
 				Hammer.cpp \
 				Shovel.cpp \
 				Tool.cpp \
-				Worker.cpp
+				Worker.cpp \
+				Workshop.cpp
 
 # Object files
 OBJ			:=	$(FTS:%.cpp=$(OBJ_DIR)/%.o)

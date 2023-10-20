@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 15:33:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:51:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Shovel.hpp"
 #include "Hammer.hpp"
 #include "Worker.hpp"
+#include "Workshop.hpp"
 
 int main()
 {
@@ -27,6 +28,9 @@ int main()
 	std::vector<Tool*> tls;
 	Worker* worker1 = new Worker(pos, stat, tls);
 	Worker* worker2 = new Worker(pos, stat, tls);
+
+	Workshop* workshop1 = new Workshop;
+	Workshop* workshop2 = new Workshop;
 	
 	// Usando a ferramenta
 	shovel->use();
@@ -61,6 +65,9 @@ int main()
 	
 	Tool* shovelTool = getToolOfType<Shovel>(worker1);
 	std::cout << "Endereço de shovel (toolType): " << shovelTool << std::endl;
+
+	workshop1->addWorker(worker1, NONE);
+	workshop2->addWorker(worker1, HAMMER);
 	
 
 
@@ -70,6 +77,6 @@ int main()
 	delete worker1;
 	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	shovelUses = shovel->getNumberOfUses();
-	
+
 	return 0;
 }

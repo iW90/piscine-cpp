@@ -6,11 +6,15 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 16:38:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:51:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Workshop.hpp"
+
+Workshop::Workshop() {}
+
+Workshop::~Workshop() {}
 
 Worker* Workshop::getWorker(Worker* worker) const
 {

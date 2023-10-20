@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Shovel.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:56:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 22:28:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:01:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Shovel : public Tool
 		void	setWorker(Worker* worker);
 
 		// Implementação do método use
-		void use();
+		void	use();
 };
 
 #endif

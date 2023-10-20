@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 11:26:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:25:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main()
 {
 	// Criando
 	
-	Shovel shovel;
-	Hammer hammer;
+	Tool* shovel = new Shovel;
+	Tool* hammer = new Hammer;
 
 	Position pos = {5, 6, 7};
 	Statistic stat = {42, 84};
@@ -29,38 +29,39 @@ int main()
 	Worker* worker2 = new Worker(pos, stat, tls);
 	
 	// Usando a ferramenta
-	shovel.use();
-	shovel.use();
-	hammer.use();
+	shovel->use();
+	shovel->use();
+	hammer->use();
 	
 	// Acessando o número de usos da pá
-	int shovelUses = shovel.getNumberOfUses();
+	int shovelUses = shovel->getNumberOfUses();
 	std::cout << "Número de usos da pá: " << shovelUses << std::endl;
 
 	// Acessando o número de usos do martelo
-	int hammerUses = hammer.getNumberOfUses();
+	int hammerUses = hammer->getNumberOfUses();
 	std::cout << "Número de usos do martelo: " << hammerUses << std::endl;
 
-	worker2->addTool(&shovel);
-	shovel.use();
+	worker2->addTool(shovel);
+	shovel->use();
 
 	// Acessando o número de usos da pá
-	shovelUses = shovel.getNumberOfUses();
+	shovelUses = shovel->getNumberOfUses();
 	std::cout << "Número de usos da pá: " << shovelUses << std::endl;
-	std::cout << "Endereço de shovel: " << worker2->getTool(&shovel) << std::endl;
+	std::cout << "Endereço de shovel: " << worker2->getTool(shovel) << std::endl;
 	
 	// Trocando a pá de trabalhador
-	worker1->addTool(&shovel);
-	std::cout << "Endereço de shovel: " << worker1->getTool(&shovel) << std::endl;
-	std::cout << "Endereço de shovel: " << worker2->getTool(&shovel) << std::endl;
+	worker1->addTool(shovel);
+	std::cout << "Endereço de shovel: " << worker1->getTool(shovel) << std::endl;
+	std::cout << "Endereço de shovel: " << worker2->getTool(shovel) << std::endl;
 
-	worker1->removeTool(&shovel);
-	std::cout << "Endereço de shovel: " << worker1->getTool(&shovel) << std::endl;
+	worker1->removeTool(shovel);
+	std::cout << "Endereço de shovel: " << worker1->getTool(shovel) << std::endl;
 	
-	worker1->addTool(&shovel);
+	worker1->addTool(shovel);
+	
 	// CORRIGIR
 	//Tool* shovelTool = worker1->getToolOfType<Shovel>();
-	//std::cout << "Endereço de shovel: " << &shovelTool << std::endl;
+	//std::cout << "Endereço de shovel: " << shovelTool << std::endl;
 	
 
 
@@ -77,7 +78,7 @@ int main()
 	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	delete worker1;
 	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
-	shovelUses = shovel.getNumberOfUses();
+	shovelUses = shovel->getNumberOfUses();
 
 	
 	//	std::cout << "This worker is not in this workshop." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 22:04:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 09:16:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main()
 	int hammerUses = hammer.getNumberOfUses();
 	std::cout << "Número de usos do martelo: " << hammerUses << std::endl;
 
+	
 	//Shovel* shovelTool = worker1.getToolOfType<Shovel>();
 	
 	return 0;

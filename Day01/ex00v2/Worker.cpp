@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 22:34:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 09:17:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void Worker::removeTool(Tool* tool)
 
 void Worker::addTool(Tool* tool)
 {
+	if (!tool)
+		return ;
 	for (size_t i = 0; i < tools.size(); ++i)
 	{
 		if (tools[i] == tool)
@@ -74,16 +76,11 @@ void Worker::addTool(Tool* tool)
 			return ;
 		}
 	}
+	if (Worker* worker = tool->getWorker())
+		worker->removeTool(tool);
 	tool->setWorker(this);
 	setTool(tool);
 }
-
-/*
-void Worker::takeTool(Tool* tool, Worker* worker)
-{
-	
-}
-*/
 
 template <typename ToolType>
 ToolType* Worker::getToolOfType()

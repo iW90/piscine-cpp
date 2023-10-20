@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:58:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 22:37:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/20 09:19:10 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Hammer::Hammer()
 {
 	numberOfUses = 0;
+	worker = 0;
 }
 
 Hammer::~Hammer() {}

@@ -12,7 +12,7 @@
 	- [ExplosionChamber](#explosionchamber)
 	- [Injector](#injector)
 	- [Pedal](#pedal)
-	- [DAE](#dae)
+	- [Dae](#dae)
 	- [SteerWheel](#steerwheel)
 	- [Brake](#brake)
 	- [Motor](#motor)
@@ -164,10 +164,10 @@
 
 > The structure Pedal is a class containing a pointer to a LinkablePart object and two methods: void setTarget(LinkablePart* p_part); which sets the target of the pedal to a given part, and void use(float p_pression); which uses the pedal with a given pressure.
 
-### DAE
+### Dae
 
 ```cpp
-	class DAE
+	class Dae
 	{
 		- direction: Direction*
 		- force: float
@@ -176,22 +176,23 @@
 		+ setDirection(direction: Direction*): void
 		+ getForce(): float
 		+ setForce(force: float): void
-		+ DAE()
-		+ ~DAE()
+		+ Dae()
+		+ ~Dae()
 	}
 ```
 
 > The structure DAE is a class containing a pointer to a Direction object and a float variable force. It has a method void use(float p_angle); which uses the DAE with a given angle.
+> - DAE (Direction Assistée Électrique): Electric Power Steering (EPS or EPAS) is used to assist the driver in steering the vehicle.
 
 ### SteerWheel
 
 ```cpp
 	class SteerWheel
 	{
-		- dae: DAE*
+		- dae: Dae*
 		+ turn(p_angle: float): void
-		+ getDae(): DAE*
-		+ setDae(dae: DAE*): void
+		+ getDae(): Dae*
+		+ setDae(dae: Dae*): void
 		+ SteerWheel()
 		+ ~SteerWheel()
 	}
@@ -313,9 +314,9 @@
 ```cpp
 	class Electronics
 	{
-		- dae: DAE
-		+ getDAE(): DAE
-		+ setDAE(dae: DAE): void
+		- dae: Dae
+		+ getDae(): Dae
+		+ setDae(dae: Dae): void
 		+ Electronics()
 		+ ~Electronics()
 	}
@@ -355,33 +356,33 @@
 
 ## Relationships
 
-- GearLever --|> Singleton
-- GearLever "1" *--> "0..*" Gear
-- Transmission "1" --> "0..*" Wheel
-- Injector --|> LinkablePart
-- Pedal "1" --> "1" LinkablePart
-- BrakeController --|> LinkablePart
-- BrakeController "1" *--> "0..*" Brake
-- Brake "1" --> "1" Wheel
-- Crankshaft "1" --> "1" Transmission
-- ExplosionChamber "1" --> "1" Crankshaft
-- Injector "1" --> "1" ExplosionChamber
-- Electronics "1" --> "1" DAE
-- Direction "1" o--> "0..*" Wheel
-- DAE "1" --> "1" Direction
-- SteerWheel "1" --> "1" DAE
-- Cockpit "1" *--> "1" Pedal
-- Cockpit "1" *--> "1" SteerWheel
-- Cockpit "1" *--> "1" GearLever
-- Motor "1" *--> "1" Injector
-- Motor "1" *--> "1" ExplosionChamber
-- Motor "1" *--> "1" Crankshaft
-- Car "1" *--> "1" BrakeController
-- Car "1" *--> "1" Direction
-- Car "1" *--> "1" Transmission
-- Car "1" *--> "1" Motor
-- Car "1" *--> "1" Electronics
-- Car "1" *--> "1" Cockpit
+- [GearLever: Singleton] GearLever herda Singleton (inherit)
+- [GearLever contém várias Gears] Gearlever é composto por Gears (composition)
+- [Transmission: Wheel] Transmitission está associado a Wheels (association)
+- [Injector: LinkablePart] Injector herda LinkablePart
+- [Pedal LinkablePart] Pedal está associado a LinkablePart (association)
+- [BrakeController: LinkablePart] BrakeController herda LinkablePart (inherit)
+- [BrakeController: Brake] BrakeController é composto por Brakes (composition)
+- [Brake: Wheel] Brale está agregado a Wheel (aggregation)
+- [Crankshaft: Transmission] Crankshaft está associado a Transmission (association)
+- [ExplosionChamber: Crankshaft] ExplosionChamber está associado a Crankshaft (association)
+- [Injector: ExplosionChamber] Injector está associado a ExplosionChamber (association)
+- [Electronics: Dae] Electronics está agregado a Dae (aggregation)
+- [Direction: Wheel] Direction está agregado a Wheel (aggregation)
+- [Dae: Direction] Dae é composto por Direction (composition)
+- [SteerWheel: Dae] SteerWheel é associado a Dae (association)
+- [Cockpit: Pedal] Cockpit é composto por Pedal (composition)
+- [Cockpit: SteerWheel] Cockpit é composto por SteerWheel (composition)
+- [Cockpit: GearLever] Cockpit é composto por GearLever (composition)
+- [Motor: Injector] Motor é composto por Injector (composition)
+- [Motor: ExplosionChamber] Motor é composto por ExplosionChamber (composition)
+- [Motor: Crankshaft] Motor é composto por Crankshaft (composition)
+- [Car: BrakeController] Car é composto por BrakeController (composition)
+- [Car: Direction] Car é composto por Direction (composition)
+- [Car: Transmission] Car é composto por Transmission (composition)
+- [Car: Motor] Car é composto por Motor (composition)
+- [Car: Electronics] Car é composto por Electronics (composition)
+- [Car: Cockpit] Car é composto por Cockpit (composition)
 
 ## Links
 
@@ -515,7 +516,7 @@ class Pedal #wheat ##tomato
 	+ ~Pedal()
 }
 
-class DAE #wheat ##tomato
+class Dae #wheat ##tomato
 {
 	__ Attributes __
 	- direction: Direction*
@@ -529,20 +530,20 @@ class DAE #wheat ##tomato
 	+ getForce(): float
 	+ setForce(force: float): void
 	.. Constructor/Destructor ..
-	+ DAE()
-	+ ~DAE()
+	+ Dae()
+	+ ~Dae()
 }
 
 class SteerWheel #wheat ##tomato
 {
 	__ Attributes __
-	- dae: DAE*
+	- dae: Dae*
 	==
 	__ Methods __
 	+ turn(p_angle: float): void
 	.. Getters/Setters ..
-	+ getDae(): DAE*
-	+ setDae(dae: DAE*): void
+	+ getDae(): Dae*
+	+ setDae(dae: Dae*): void
 	.. Constructor/Destructor ..
 	+ SteerWheel()
 	+ ~SteerWheel()
@@ -653,12 +654,12 @@ class Cockpit #wheat ##tomato
 class Electronics #wheat ##tomato
 {
 	__ Attributes __
-	- dae: DAE
+	- dae: Dae
 	==
 	__ Methods __
 	.. Getters/Setters ..
-	+ getDAE(): DAE
-	+ setDAE(dae: DAE): void
+	+ getDae(): Dae
+	+ setDae(dae: Dae): void
 	.. Constructor/Destructor ..
 	+ Electronics()
 	+ ~Electronics()
@@ -704,10 +705,10 @@ Transmission "1" o--> "0..*" Wheel
 Crankshaft "1" --> "1" Transmission
 ExplosionChamber "1" --> "1" Crankshaft
 Injector "1" --> "1" ExplosionChamber
-Electronics "1" --> "1" DAE
+Electronics "1" *--> "1" Dae
+Dae "1" *--> "1" Direction
 Direction "1" o--> "0..*" Wheel
-DAE "1" --> "1" Direction
-SteerWheel "1" --> "1" DAE
+SteerWheel "1" --> "1" Dae
 Cockpit "1" *--> "1" Pedal
 Cockpit "1" *--> "1" SteerWheel
 Cockpit "1" *--> "1" GearLever

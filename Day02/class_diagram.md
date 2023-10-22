@@ -365,16 +365,16 @@
 - Direction "1" o--> "0..*" Wheel
 - Brake "1" --> "1" Wheel
 - Crankshaft "1" --> "1" Transmission
-	- ExplosionChamber "1" --> "1" Crankshaft
-	- Injector "1" --> "1" ExplosionChamber
-	- Motor "1" --> "1" Injector
-	- Motor "1" --> "1" ExplosionChamber
-	- Motor "1" --> "1" Crankshaft
-	- DAE "1" --> "1" Direction
-	- SteerWheel "1" --> "1" DAE
-	- Cockpit "1" --> "1" Pedal
-	- Cockpit "1" --> "1" SteerWheel
-	- Cockpit "1" --> "1" GearLever
+- ExplosionChamber "1" --> "1" Crankshaft
+- Injector "1" --> "1" ExplosionChamber
+- DAE "1" --> "1" Direction
+- SteerWheel "1" --> "1" DAE
+- Cockpit "1" *--> "1" Pedal
+- Cockpit "1" *--> "1" SteerWheel
+- Cockpit "1" *--> "1" GearLever
+- Motor "1" *--> "1" Injector
+- Motor "1" *--> "1" ExplosionChamber
+- Motor "1" *--> "1" Crankshaft
 - Car "1" *--> "1" BrakeController
 - Car "1" *--> "1" Direction
 - Car "1" *--> "1" Transmission
@@ -699,13 +699,23 @@ Injector --|> LinkablePart
 BrakeController --|> LinkablePart
 Pedal "1" --> "1" LinkablePart
 
+BrakeController "1" *--> "0..*" Brake
 Brake "1" o--> "1" Wheel
 Transmission "1" o--> "0..*" Wheel
-Direction "1" o--> "0..*" Wheel
-
-BrakeController "1" *--> "0..*" Brake
 Crankshaft "1" --> "1" Transmission
+ExplosionChamber "1" --> "1" Crankshaft
+Injector "1" --> "1" ExplosionChamber
 
+Direction "1" o--> "0..*" Wheel
+DAE "1" --> "1" Direction
+SteerWheel "1" --> "1" DAE
+
+Cockpit "1" *--> "1" Pedal
+Cockpit "1" *--> "1" SteerWheel
+Cockpit "1" *--> "1" GearLever
+Motor "1" *--> "1" Injector
+Motor "1" *--> "1" ExplosionChamber
+Motor "1" *--> "1" Crankshaft
 Car "1" *--> "1" BrakeController
 Car "1" *--> "1" Direction
 Car "1" *--> "1" Transmission

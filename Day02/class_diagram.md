@@ -31,12 +31,9 @@
 ### Wheel
 
 ```cpp
-	class Wheel #wheat ##tomato
+	class Wheel
 	{
-		==
-		__ Methods __
 		+ executeRotation(p_force: float): void
-		.. Constructor/Destructor ..
 		+ Wheel()
 		+ ~Wheel()
 	}
@@ -47,16 +44,11 @@
 ### Gear
 
 ```cpp
-	class Gear #wheat ##tomato
+	class Gear
 	{
-		__ Attributes __
 		- demultiplier: int
-		==
-		__ Methods __
-		.. Getters/Setters ..
 		+ getDemultiplier(): int
 		+ setDemultiplier(demulstiplier: int): void
-		.. Constructor/Destructor ..
 		+ Gear()
 		+ ~Gear()
 	}
@@ -67,11 +59,9 @@
 ### LinkablePart
 
 ```cpp
-	abstract class LinkablePart
+	class LinkablePart
 	{
-		==
-		__ Methods __
-		+ {abstract} execute(p_pression: float): void
+		+ execute(p_pression: float): void
 	}
 ```
 
@@ -80,21 +70,16 @@
 ### GearLever
 
 ```cpp
-	class GearLever : Singleton #wheat ##tomato
+	class GearLever : Singleton
 	{
-		__ Attributes __
 		- gears: Gear[]
 		- level: int
-		==
-		__ Methods __
 		+ change(): void
 		+ activeGear(): Gear*
-		.. Getters/Setters ..
 		+ getGears(): Gear[]
 		+ setGears(gears: Gear[]): void
 		+ getLevel(): int
 		+ setLevel(level: int): void
-		.. Constructor/Destructor ..
 		- GearLever()
 		+ ~GearLever()
 	}
@@ -105,15 +90,10 @@
 ### Singleton
 
 ```cpp
-	stereotype Singleton <<GearLever>>
+	class Singleton <<GearLever>>
 	{
-		__ Attributes __
-		- {static} instance: Singleton*
-		==
-		__ Methods __
-		.. Getters/Setters ..
-		+ {static} getInstance: Singleton*
-		.. Constructor/Destructor ..
+		- static instance: Singleton*
+		+ static getInstance: Singleton*
 		- Singleton(instance: Singleton*)
 		- ~Singleton()
 	}
@@ -124,17 +104,12 @@
 ### Crankshaft
 
 ```cpp
-	class Crankshaft #wheat ##tomato
+	class Crankshaft
 	{
-		__ Attributes __
 		- transmission: Transmission*
-		==
-		__ Methods __
 		+ receiveForce(p_volume: float): void
-		.. Getters/Setters ..
 		+ getTransmission(): Transmission*
 		+ setTransmission(transmission: Transmission*): void
-		.. Constructor/Destructor ..
 		+ Crankshaft()
 		+ ~Crankshaft()
 	}
@@ -145,17 +120,12 @@
 ### ExplosionChamber
 
 ```cpp
-	class ExplosionChamber #wheat ##tomato
+	class ExplosionChamber
 	{
-		__ Attributes __
 		- crankshaft: Crankshaft*
-		==
-		__ Methods __
 		+ fill(p_volume: float): void
-		.. Getters/Setters ..
 		+ getCrankshaft(): Crankshaft*
 		+ setCrankshaft(crankshaft: Crankshaft*)
-		.. Constructor/Destructor ..
 		+ ExplosionChamber()
 		+ ~ExplosionChamber()
 	}
@@ -166,17 +136,12 @@
 ### Injector
 
 ```cpp
-	class Injector #wheat ##tomato
+	class Injector
 	{
-		__ Attributes __
 		- explosionChamber: ExplosionChamber*
-		==
-		__ Methods __
 		+ execute(p_pression: float): void
-		.. Getters/Setters ..
 		+ getExplosionChamber(): ExplosionChamber*
 		+ setExplosionChamber(explosionChamber: ExplosionChamber*): void
-		.. Constructor/Destructor ..
 		+ Injector()
 		+ ~Injector()
 	}
@@ -187,16 +152,11 @@
 ### Pedal
 
 ```cpp
-	class Pedal #wheat ##tomato
+	class Pedal
 	{
-		__ Attributes __
 		- target: LinkablePart*
-		==
-		__ Methods __
 		+ setTarget(p_part: LinkablePart*): void
 		+ use(p_pression: float): void
-		.. Getters/Setters ..
-		.. Constructor/Destructor ..
 		+ Pedal()
 		+ ~Pedal()
 	}
@@ -207,20 +167,15 @@
 ### DAE
 
 ```cpp
-	class DAE #wheat ##tomato
+	class DAE
 	{
-		__ Attributes __
 		- direction: Direction*
 		- force: float
-		==
-		__ Methods __
 		+ use(p_angle: float): void
-		.. Getters/Setters ..
 		+ getDirection(): Direction*
 		+ setDirection(direction: Direction*): void
 		+ getForce(): float
 		+ setForce(force: float): void
-		.. Constructor/Destructor ..
 		+ DAE()
 		+ ~DAE()
 	}
@@ -231,17 +186,12 @@
 ### SteerWheel
 
 ```cpp
-	class SteerWheel #wheat ##tomato
+	class SteerWheel
 	{
-		__ Attributes __
 		- dae: DAE*
-		==
-		__ Methods __
 		+ turn(p_angle: float): void
-		.. Getters/Setters ..
 		+ getDae(): DAE*
 		+ setDae(dae: DAE*): void
-		.. Constructor/Destructor ..
 		+ SteerWheel()
 		+ ~SteerWheel()
 	}
@@ -252,18 +202,13 @@
 ### Brake
 
 ```cpp
-	class Brake #wheat ##tomato
+	class Brake
 	{
-		__ Attributes __
 		- wheel: Wheel*
-		==
-		__ Methods __
 		+ execute(p_force: float): void
 		+ attackWheel(p_wheel: Wheel*): void
-		.. Getters/Setters ..
 		+ getWheel(): Wheel*
 		+ setWheel(wheel: Wheel*): void
-		.. Constructor/Destructor ..
 		+ Brake()
 		+ ~Brake()
 	}
@@ -274,23 +219,18 @@
 ### Motor
 
 ```cpp
-	class Motor #wheat ##tomato
+	class Motor
 	{
-		__ Attributes __
 		- injector: Injector
 		- explosionChamber: ExplosionChamber
 		- crankshaft: Crankshaft
-		==
-		__ Methods __
 		+ connectToTransmission(p_transmission: Transmission*): void
-		.. Getters/Setters ..
 		+ getInjector(): Injector
 		+ setInjector(injector: Injector): void
 		+ getExplosionChamber(): ExplosionChamber
 		+ setExplosionChamber(explosionChamber: ExplosionChamber): void
 		+ getCrankshaft(): Crankshaft
 		+ setCrankshaft(crankshaft: Crankshaft): void
-		.. Constructor/Destructor ..
 		+ Motor()
 		+ ~Motor()
 	}
@@ -301,17 +241,12 @@
 ### Transmission
 
 ```cpp
-	class Transmission #wheat ##tomato
+	class Transmission
 	{
-		__ Attributes __
 		- wheels: Wheel[]
-		==
-		__ Methods __
 		+ activate(p_force: float): void
-		.. Getters/Setters ..
 		+ getWheels(): Wheel[]
 		+ setWheels(wheels: Wheel[]): void
-		.. Constructor/Destructor ..
 		+ Transmission()
 		+ ~Transmission()
 	}
@@ -322,17 +257,12 @@
 ### Direction
 
 ```cpp
-	class Direction #wheat ##tomato
+	class Direction
 	{
-		__ Attributes __
 		- wheels: Wheel[]
-		==
-		__ Methods __
 		+ turn(p_angle: float): void
-		.. Getters/Setters ..
 		+ getWheels(): Wheel[]
 		+ setWheels(wheels: Wheel[]): void
-		.. Constructor/Destructor ..
 		+ Direction()
 		+ ~Direction()
 	}
@@ -343,17 +273,12 @@
 ### BrakeController
 
 ```cpp
-	class BrakeController #wheat ##tomato
+	class BrakeController
 	{
-		__ Attributes __
 		- brakes: Brake[]
-		==
-		__ Methods __
 		+ execute(p_pression: float): void
-		.. Getters/Setters ..
 		+ getBrakes(): Brake[]
 		+ setBrakes(brakes: Brake[]): void
-		.. Constructor/Destructor ..
 		+ BrakeController()
 		+ ~BrakeController()
 	}
@@ -364,22 +289,17 @@
 ### Cockpit
 
 ```cpp
-	class Cockpit #wheat ##tomato
+	class Cockpit
 	{
-		__ Attributes __
 		- pedal: Pedal
 		- steerWheel: SteerWheel
 		- gearLever: GearLever
-		==
-		__ Methods __
-		.. Getters/Setters ..
 		+ getPedal(): Pedal
 		+ setPedal(pedal: Pedal): void
 		+ getSteerWheel(): SteerWheel
 		+ setSteerWheel(steerWheel: SteerWheel): void
 		+ getGearLever(): GearLever
 		+ setGearLever(gearLever: GearLever): void
-		.. Constructor/Destructor ..
 		+ Cockpit()
 		+ ~Cockpit()
 	}
@@ -391,16 +311,11 @@
 ### Electronics
 
 ```cpp
-	class Electronics #wheat ##tomato
+	class Electronics
 	{
-		__ Attributes __
 		- dae: DAE
-		==
-		__ Methods __
-		.. Getters/Setters ..
 		+ getDAE(): DAE
 		+ setDAE(dae: DAE): void
-		.. Constructor/Destructor ..
 		+ Electronics()
 		+ ~Electronics()
 	}
@@ -411,18 +326,14 @@
 ### Car
 
 ```cpp
-	class Car #wheat ##tomato
+	class Car
 	{
-		__ Attributes __
 		- brakeController: BrakeController
 		- cockpit: Cockpit
 		- electronics: Electronics
 		- direction: Direction
 		- transmission: Transmission
 		- motor: Motor
-		==
-		__ Methods __
-		.. Getters/Setters ..
 		+ getBrakeController(): BrakeController
 		+ setBrakeController(brakeController: BrakeController): void
 		+ getCockpit(): Cockpit
@@ -435,7 +346,6 @@
 		+ setTransmission(transmission: Transmission): void
 		+ getMotor(): Motor
 		+ setMotor(motor: Motor): void
-		.. Constructor/Destructor ..
 		+ Car()
 		+ ~Car()
 	}

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:35:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 15:35:10 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 20:32:42 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 }
 
 /*
-** g++ -std=c++98 -o car main.cpp && ./car
+** g++ -std=c++98 main.cpp && ./main
 */
 
 /*

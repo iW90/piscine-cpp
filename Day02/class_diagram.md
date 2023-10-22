@@ -243,7 +243,7 @@
 ```cpp
 	class Transmission
 	{
-		- wheels: Wheel[]
+		- wheels: *Wheel[]
 		+ activate(p_force: float): void
 		+ getWheels(): Wheel[]
 		+ setWheels(wheels: Wheel[]): void
@@ -355,33 +355,32 @@
 
 ## Relationships
 
-- LinkablePart --|> "virtual class"
 - GearLever --|> Singleton
-- GearLever "1" --> "0..*" Gear
+- GearLever "1" *--> "0..*" Gear
 - Transmission "1" --> "0..*" Wheel
-- Crankshaft "1" --> "1" Transmission
-- ExplosionChamber "1" --> "1" Crankshaft
 - Injector --|> LinkablePart
-- Injector "1" --> "1" ExplosionChamber
-- Motor "1" --> "1" Injector
-- Motor "1" --> "1" ExplosionChamber
-- Motor "1" --> "1" Crankshaft
 - Pedal "1" --> "1" LinkablePart
-- Direction "1" --> "0..*" Wheel
-- DAE "1" --> "1" Direction
-- SteerWheel "1" --> "1" DAE
-- Brake "1" --> "1" Wheel
 - BrakeController --|> LinkablePart
-- BrakeController "1" --> "0..*" Brake
-- Cockpit "1" --> "1" Pedal
-- Cockpit "1" --> "1" SteerWheel
-- Cockpit "1" --> "1" GearLever
-- Car "1" --> "1" BrakeController
-- Car "1" --> "1" Direction
-- Car "1" --> "1" Transmission
-- Car "1" --> "1" Motor
-- Car "1" --> "1" Electronics
-- Car "1" --> "1" Cockpit
+- BrakeController "1" *--> "0..*" Brake
+- Direction "1" o--> "0..*" Wheel
+- Brake "1" --> "1" Wheel
+- Crankshaft "1" --> "1" Transmission
+	- ExplosionChamber "1" --> "1" Crankshaft
+	- Injector "1" --> "1" ExplosionChamber
+	- Motor "1" --> "1" Injector
+	- Motor "1" --> "1" ExplosionChamber
+	- Motor "1" --> "1" Crankshaft
+	- DAE "1" --> "1" Direction
+	- SteerWheel "1" --> "1" DAE
+	- Cockpit "1" --> "1" Pedal
+	- Cockpit "1" --> "1" SteerWheel
+	- Cockpit "1" --> "1" GearLever
+- Car "1" *--> "1" BrakeController
+- Car "1" *--> "1" Direction
+- Car "1" *--> "1" Transmission
+- Car "1" *--> "1" Motor
+- Car "1" *--> "1" Electronics
+- Car "1" *--> "1" Cockpit
 
 ## Links
 
@@ -588,13 +587,13 @@ class Motor #wheat ##tomato
 class Transmission #wheat ##tomato
 {
 	__ Attributes __
-	- wheels: Wheel[]
+	- wheels: *Wheel[]
 	==
 	__ Methods __
 	+ activate(p_force: float): void
 	.. Getters/Setters ..
-	+ getWheels(): Wheel[]
-	+ setWheels(wheels: Wheel[]): void
+	+ getWheels(): *Wheel[]
+	+ setWheels(wheels: *Wheel[]): void
 	.. Constructor/Destructor ..
 	+ Transmission()
 	+ ~Transmission()
@@ -692,6 +691,27 @@ class Car #wheat ##tomato
 	+ Car()
 	+ ~Car()
 }
+
+GearLever --|> Singleton
+GearLever "1" *--> "0..*" Gear
+
+Injector --|> LinkablePart
+BrakeController --|> LinkablePart
+Pedal "1" --> "1" LinkablePart
+
+Brake "1" o--> "1" Wheel
+Transmission "1" o--> "0..*" Wheel
+Direction "1" o--> "0..*" Wheel
+
+BrakeController "1" *--> "0..*" Brake
+Crankshaft "1" --> "1" Transmission
+
+Car "1" *--> "1" BrakeController
+Car "1" *--> "1" Direction
+Car "1" *--> "1" Transmission
+Car "1" *--> "1" Motor
+Car "1" *--> "1" Electronics
+Car "1" *--> "1" Cockpit
 
 @enduml
 ```

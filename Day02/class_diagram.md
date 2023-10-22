@@ -1,9 +1,36 @@
 # Class Diagram Representation
 
+## Index
+
+- [Classes](#classes)
+	- [Wheel](#wheel)
+	- [Gear](#gear)
+	- [LinkablePart](#linkablepart)
+	- [GearLever](#gearlever)
+	- [Singleton](#singleton)
+	- [Crankshaft](#crankshaft)
+	- [ExplosionChamber](#explosionchamber)
+	- [Injector](#injector)
+	- [Pedal](#pedal)
+	- [DAE](#dae)
+	- [SteerWheel](#steerwheel)
+	- [Brake](#brake)
+	- [Motor](#motor)
+	- [Transmission](#transmission)
+	- [Direction](#direction)
+	- [BrakeController](#brakecontroller)
+	- [Cockpit](#cockpit)
+	- [Electronics](#electronics)
+	- [Car](#car)
+- [Relationships](#relationships)
+- [Links](#links)
+	-[PlantUML Code](#plantuml-code)
+
 ## Classes
 
 ### Wheel
 
+```cpp
 	class Wheel #wheat ##tomato
 	{
 		==
@@ -13,11 +40,13 @@
 		+ Wheel()
 		+ ~Wheel()
 	}
+```
 
 > The structure Wheel is a class containing a method void executeRotation(float p_force); which allows a wheel to execute a rotation with a given force.
 
 ### Gear
 
+```cpp
 	class Gear #wheat ##tomato
 	{
 		__ Attributes __
@@ -31,22 +60,26 @@
 		+ Gear()
 		+ ~Gear()
 	}
+```
 
 > The structure Gear is a class containing an integer variable demultiplier which stores the demultiplier of a gear.
 
 ### LinkablePart
 
+```cpp
 	abstract class LinkablePart
 	{
 		==
 		__ Methods __
 		+ {abstract} execute(p_pression: float): void
 	}
+```
 
-> The structure LinkablePart is a virtual classes, requiering to implement a method void execute(float p_pression) to be instancied.
+> The structure LinkablePart is a virtual class, requiering to implement a method void execute(float p_pression) to be instancied.
 
 ### GearLever
 
+```cpp
 	class GearLever : Singleton #wheat ##tomato
 	{
 		__ Attributes __
@@ -65,11 +98,13 @@
 		- GearLever()
 		+ ~GearLever()
 	}
+```
 
 > - The structure GearLever is a class that inherits from Singleton<GearLever> containing an array of Gear objects and an integer variable level. It has a method void change(); which allows to change the current gear and a method Gear* activeGear(); which returns a pointer to the current active gear.
 
 ### Singleton
 
+```cpp
 	stereotype Singleton <<GearLever>>
 	{
 		__ Attributes __
@@ -82,11 +117,13 @@
 		- Singleton(instance: Singleton*)
 		- ~Singleton()
 	}
+```
 
-> Singleton é um design pattern. Trata-se de uma classe que tem apenas uma instância estática, e provê um ponto de acesso global para ela.
+> [Singleton](https://refactoring.guru/pt-br/design-patterns/singleton) is a design pattern. It's a class that has only one static instance and provides a global access point to it.
 
 ### Crankshaft
 
+```cpp
 	class Crankshaft #wheat ##tomato
 	{
 		__ Attributes __
@@ -101,11 +138,13 @@
 		+ Crankshaft()
 		+ ~Crankshaft()
 	}
+```
 
 > The structure Crankshaft is a class containing a pointer to a Transmission object and a method void receiveForce(float p_volume); which receives a force in a given volume.
 
 ### ExplosionChamber
 
+```cpp
 	class ExplosionChamber #wheat ##tomato
 	{
 		__ Attributes __
@@ -120,12 +159,13 @@
 		+ ExplosionChamber()
 		+ ~ExplosionChamber()
 	}
+```
 
 > The structure ExplosionChamber is a class containing a pointer to a Crankshaft object and a method void fill(float p_volume); which fills the chamber with a given volume.
 
-
 ### Injector
 
+```cpp
 	class Injector #wheat ##tomato
 	{
 		__ Attributes __
@@ -140,11 +180,13 @@
 		+ Injector()
 		+ ~Injector()
 	}
+```
 
 > The structure Injector is a class that inherits from LinkablePart containing a pointer to an ExplosionChamber object and a method void execute(float p_pression); which executes the injection with a given pressure.
 
 ### Pedal
 
+```cpp
 	class Pedal #wheat ##tomato
 	{
 		__ Attributes __
@@ -158,11 +200,13 @@
 		+ Pedal()
 		+ ~Pedal()
 	}
+```
 
 > The structure Pedal is a class containing a pointer to a LinkablePart object and two methods: void setTarget(LinkablePart* p_part); which sets the target of the pedal to a given part, and void use(float p_pression); which uses the pedal with a given pressure.
 
 ### DAE
 
+```cpp
 	class DAE #wheat ##tomato
 	{
 		__ Attributes __
@@ -180,11 +224,13 @@
 		+ DAE()
 		+ ~DAE()
 	}
+```
 
 > The structure DAE is a class containing a pointer to a Direction object and a float variable force. It has a method void use(float p_angle); which uses the DAE with a given angle.
 
 ### SteerWheel
 
+```cpp
 	class SteerWheel #wheat ##tomato
 	{
 		__ Attributes __
@@ -199,11 +245,13 @@
 		+ SteerWheel()
 		+ ~SteerWheel()
 	}
+```
 
 > The structure SteerWheel is a class containing a pointer to a DAE object and method(s) void turn(float p_angle) which takes a float as input.
 
 ### Brake
 
+```cpp
 	class Brake #wheat ##tomato
 	{
 		__ Attributes __
@@ -219,11 +267,13 @@
 		+ Brake()
 		+ ~Brake()
 	}
+```
 
 > The structure Brake is a class containing a pointer to a Wheel object and method(s) void execute(float p_force) and void attackWheel(Wheel* p_wheel) which take a float and a pointer to a Wheel object as inputs, respectively.
 
 ### Motor
 
+```cpp
 	class Motor #wheat ##tomato
 	{
 		__ Attributes __
@@ -244,11 +294,13 @@
 		+ Motor()
 		+ ~Motor()
 	}
+```
 
 > The structure Motor is a class containing objects of type Injector, ExplosionChamber and Crankshaft. It has a method void connectToTransmission(Transmission* p_transmission); which connects the motor to a given transmission.
 
 ### Transmission
 
+```cpp
 	class Transmission #wheat ##tomato
 	{
 		__ Attributes __
@@ -263,11 +315,13 @@
 		+ Transmission()
 		+ ~Transmission()
 	}
+```
 
 > The structure Transmission is a class containing a vector of pointers to Wheel objects and a method void activate(float p_force); which activates the transmission with a given force.
 
 ### Direction
 
+```cpp
 	class Direction #wheat ##tomato
 	{
 		__ Attributes __
@@ -282,10 +336,374 @@
 		+ Direction()
 		+ ~Direction()
 	}
+```
 
 > The structure Direction is a class containing an array of Wheel objects and a method void turn(float p_angle); which turns the direction by a given angle.
 
 ### BrakeController
+
+```cpp
+	class BrakeController #wheat ##tomato
+	{
+		__ Attributes __
+		- brakes: Brake[]
+		==
+		__ Methods __
+		+ execute(p_pression: float): void
+		.. Getters/Setters ..
+		+ getBrakes(): Brake[]
+		+ setBrakes(brakes: Brake[]): void
+		.. Constructor/Destructor ..
+		+ BrakeController()
+		+ ~BrakeController()
+	}
+```
+
+> The structure BrakeController is a class that inherits from LinkablePart and contains an array of Brake objects and method(s) void execute(float p_pression) which takes a float as input.
+
+### Cockpit
+
+```cpp
+	class Cockpit #wheat ##tomato
+	{
+		__ Attributes __
+		- pedal: Pedal
+		- steerWheel: SteerWheel
+		- gearLever: GearLever
+		==
+		__ Methods __
+		.. Getters/Setters ..
+		+ getPedal(): Pedal
+		+ setPedal(pedal: Pedal): void
+		+ getSteerWheel(): SteerWheel
+		+ setSteerWheel(steerWheel: SteerWheel): void
+		+ getGearLever(): GearLever
+		+ setGearLever(gearLever: GearLever): void
+		.. Constructor/Destructor ..
+		+ Cockpit()
+		+ ~Cockpit()
+	}
+```
+
+> The structure Cockpit is a class containing Pedal, SteerWheel, GearLever objects and method(s) that manage these objects.
+> - **Which methods are missing?**
+
+### Electronics
+
+```cpp
+	class Electronics #wheat ##tomato
+	{
+		__ Attributes __
+		- dae: DAE
+		==
+		__ Methods __
+		.. Getters/Setters ..
+		+ getDAE(): DAE
+		+ setDAE(dae: DAE): void
+		.. Constructor/Destructor ..
+		+ Electronics()
+		+ ~Electronics()
+	}
+```
+
+> The structure Electronics is a class containing a DAE object.
+
+### Car
+
+```cpp
+	class Car #wheat ##tomato
+	{
+		__ Attributes __
+		- brakeController: BrakeController
+		- cockpit: Cockpit
+		- electronics: Electronics
+		- direction: Direction
+		- transmission: Transmission
+		- motor: Motor
+		==
+		__ Methods __
+		.. Getters/Setters ..
+		+ getBrakeController(): BrakeController
+		+ setBrakeController(brakeController: BrakeController): void
+		+ getCockpit(): Cockpit
+		+ setCockpit(cockpit: Cockpit): void
+		+ getElectronics(): Electronics
+		+ setElectronics(electronics: Electronics): void
+		+ getDirection(): Direction
+		+ setDirection(direction: Direction): void
+		+ getTransmission(): Transmission
+		+ setTransmission(transmission: Transmission): void
+		+ getMotor(): Motor
+		+ setMotor(motor: Motor): void
+		.. Constructor/Destructor ..
+		+ Car()
+		+ ~Car()
+	}
+```
+
+> The structure Car is a class containing a BrakeController, Direction, Transmission, Motor, Electronics, and Cockpit objects.
+
+## Relationships
+
+- LinkablePart --|> "virtual class"
+- GearLever --|> Singleton
+- GearLever "1" --> "0..*" Gear
+- Transmission "1" --> "0..*" Wheel
+- Crankshaft "1" --> "1" Transmission
+- ExplosionChamber "1" --> "1" Crankshaft
+- Injector --|> LinkablePart
+- Injector "1" --> "1" ExplosionChamber
+- Motor "1" --> "1" Injector
+- Motor "1" --> "1" ExplosionChamber
+- Motor "1" --> "1" Crankshaft
+- Pedal "1" --> "1" LinkablePart
+- Direction "1" --> "0..*" Wheel
+- DAE "1" --> "1" Direction
+- SteerWheel "1" --> "1" DAE
+- Brake "1" --> "1" Wheel
+- BrakeController --|> LinkablePart
+- BrakeController "1" --> "0..*" Brake
+- Cockpit "1" --> "1" Pedal
+- Cockpit "1" --> "1" SteerWheel
+- Cockpit "1" --> "1" GearLever
+- Car "1" --> "1" BrakeController
+- Car "1" --> "1" Direction
+- Car "1" --> "1" Transmission
+- Car "1" --> "1" Motor
+- Car "1" --> "1" Electronics
+- Car "1" --> "1" Cockpit
+
+## Links
+
+- [PlantUML Generator](https://plantuml.com/)
+- [PlantUML Syntax](https://plantuml.com/class-diagram)
+
+### PlantUML Code
+
+```
+@startuml
+
+class Wheel #wheat ##tomato
+{
+	==
+	__ Methods __
+	+ executeRotation(p_force: float): void
+	.. Constructor/Destructor ..
+	+ Wheel()
+	+ ~Wheel()
+}
+
+class Gear #wheat ##tomato
+{
+	__ Attributes __
+	- demultiplier: int
+	==
+	__ Methods __
+	.. Getters/Setters ..
+	+ getDemultiplier(): int
+	+ setDemultiplier(demulstiplier: int): void
+	.. Constructor/Destructor ..
+	+ Gear()
+	+ ~Gear()
+}
+
+abstract class LinkablePart #white ##tomato
+{
+	==
+	__ Methods __
+	+ {abstract} execute(p_pression: float): void
+}
+
+class GearLever #wheat ##tomato
+{
+	__ Attributes __
+	- gears: Gear[]
+	- level: int
+	==
+	__ Methods __
+	+ change(): void
+	+ activeGear(): Gear*
+	.. Getters/Setters ..
+	+ getGears(): Gear[]
+	+ setGears(gears: Gear[]): void
+	+ getLevel(): int
+	+ setLevel(level: int): void
+	.. Constructor/Destructor ..
+	- GearLever()
+	+ ~GearLever()
+}
+
+stereotype Singleton <<GearLever>> #white ##tomato
+{
+	__ Attributes __
+	- {static} instance: Singleton*
+	==
+	__ Methods __
+	.. Getters/Setters ..
+	+ {static} getInstance: Singleton*
+	.. Constructor/Destructor ..
+	- Singleton(instance: Singleton*)
+	+ ~Singleton()
+}
+
+class Crankshaft #wheat ##tomato
+{
+	__ Attributes __
+	- transmission: Transmission*
+	==
+	__ Methods __
+	+ receiveForce(p_volume: float): void
+	.. Getters/Setters ..
+	+ getTransmission(): Transmission*
+	+ setTransmission(transmission: Transmission*): void
+	.. Constructor/Destructor ..
+	+ Crankshaft()
+	+ ~Crankshaft()
+}
+
+class ExplosionChamber #wheat ##tomato
+{
+	__ Attributes __
+	- crankshaft: Crankshaft*
+	==
+	__ Methods __
+	+ fill(p_volume: float): void
+	.. Getters/Setters ..
+	+ getCrankshaft(): Crankshaft*
+	+ setCrankshaft(crankshaft: Crankshaft*)
+	.. Constructor/Destructor ..
+	+ ExplosionChamber()
+	+ ~ExplosionChamber()
+}
+
+class Injector #wheat ##tomato
+{
+	__ Attributes __
+	- explosionChamber: ExplosionChamber*
+	==
+	__ Methods __
+	+ execute(p_pression: float): void
+	.. Getters/Setters ..
+	+ getExplosionChamber(): ExplosionChamber*
+	+ setExplosionChamber(explosionChamber: ExplosionChamber*): void
+	.. Constructor/Destructor ..
+	+ Injector()
+	+ ~Injector()
+}
+
+class Pedal #wheat ##tomato
+{
+	__ Attributes __
+	- target: LinkablePart*
+	==
+	__ Methods __
+	+ setTarget(p_part: LinkablePart*): void
+	+ use(p_pression: float): void
+	.. Getters/Setters ..
+	.. Constructor/Destructor ..
+	+ Pedal()
+	+ ~Pedal()
+}
+
+class DAE #wheat ##tomato
+{
+	__ Attributes __
+	- direction: Direction*
+	- force: float
+	==
+	__ Methods __
+	+ use(p_angle: float): void
+	.. Getters/Setters ..
+	+ getDirection(): Direction*
+	+ setDirection(direction: Direction*): void
+	+ getForce(): float
+	+ setForce(force: float): void
+	.. Constructor/Destructor ..
+	+ DAE()
+	+ ~DAE()
+}
+
+class SteerWheel #wheat ##tomato
+{
+	__ Attributes __
+	- dae: DAE*
+	==
+	__ Methods __
+	+ turn(p_angle: float): void
+	.. Getters/Setters ..
+	+ getDae(): DAE*
+	+ setDae(dae: DAE*): void
+	.. Constructor/Destructor ..
+	+ SteerWheel()
+	+ ~SteerWheel()
+}
+
+class Brake #wheat ##tomato
+{
+	__ Attributes __
+	- wheel: Wheel*
+	==
+	__ Methods __
+	+ execute(p_force: float): void
+	+ attackWheel(p_wheel: Wheel*): void
+	.. Getters/Setters ..
+	+ getWheel(): Wheel*
+	+ setWheel(wheel: Wheel*): void
+	.. Constructor/Destructor ..
+	+ Brake()
+	+ ~Brake()
+}
+
+class Motor #wheat ##tomato
+{
+	__ Attributes __
+	- injector: Injector
+	- explosionChamber: ExplosionChamber
+	- crankshaft: Crankshaft
+	==
+	__ Methods __
+	+ connectToTransmission(p_transmission: Transmission*): void
+	.. Getters/Setters ..
+	+ getInjector(): Injector
+	+ setInjector(injector: Injector): void
+	+ getExplosionChamber(): ExplosionChamber
+	+ setExplosionChamber(explosionChamber: ExplosionChamber): void
+	+ getCrankshaft(): Crankshaft
+	+ setCrankshaft(crankshaft: Crankshaft): void
+	.. Constructor/Destructor ..
+	+ Motor()
+	+ ~Motor()
+}
+
+class Transmission #wheat ##tomato
+{
+	__ Attributes __
+	- wheels: Wheel[]
+	==
+	__ Methods __
+	+ activate(p_force: float): void
+	.. Getters/Setters ..
+	+ getWheels(): Wheel[]
+	+ setWheels(wheels: Wheel[]): void
+	.. Constructor/Destructor ..
+	+ Transmission()
+	+ ~Transmission()
+}
+
+class Direction #wheat ##tomato
+{
+	__ Attributes __
+	- wheels: Wheel[]
+	==
+	__ Methods __
+	+ turn(p_angle: float): void
+	.. Getters/Setters ..
+	+ getWheels(): Wheel[]
+	+ setWheels(wheels: Wheel[]): void
+	.. Constructor/Destructor ..
+	+ Direction()
+	+ ~Direction()
+}
 
 class BrakeController #wheat ##tomato
 {
@@ -301,10 +719,6 @@ class BrakeController #wheat ##tomato
 	+ BrakeController()
 	+ ~BrakeController()
 }
-
-> The structure BrakeController is a class that inherits from LinkablePart and contains an array of Brake objects and method(s) void execute(float p_pression) which takes a float as input.
-
-### Cockpit
 
 class Cockpit #wheat ##tomato
 {
@@ -326,11 +740,6 @@ class Cockpit #wheat ##tomato
 	+ ~Cockpit()
 }
 
-> The structure Cockpit is a class containing Pedal, SteerWheel, GearLever objects and method(s) that manage these objects.
-> - **desenvolver métodos que faltam?**
-
-### Electronics
-
 class Electronics #wheat ##tomato
 {
 	__ Attributes __
@@ -344,10 +753,6 @@ class Electronics #wheat ##tomato
 	+ Electronics()
 	+ ~Electronics()
 }
-
-> The structure Electronics is a class containing a DAE object.
-
-### Car
 
 class Car #wheat ##tomato
 {
@@ -378,38 +783,5 @@ class Car #wheat ##tomato
 	+ ~Car()
 }
 
-> The structure Car is a class containing a BrakeController, Direction, Transmission, Motor, Electronics, and Cockpit objects.
-
-## Relationships
-
-LinkablePart --|> "virtual class"
-GearLever --|> Singleton
-GearLever "1" --> "0..*" Gear
-Transmission "1" --> "0..*" Wheel
-Crankshaft "1" --> "1" Transmission
-ExplosionChamber "1" --> "1" Crankshaft
-Injector --|> LinkablePart
-Injector "1" --> "1" ExplosionChamber
-Motor "1" --> "1" Injector
-Motor "1" --> "1" ExplosionChamber
-Motor "1" --> "1" Crankshaft
-Pedal "1" --> "1" LinkablePart
-Direction "1" --> "0..*" Wheel
-DAE "1" --> "1" Direction
-SteerWheel "1" --> "1" DAE
-Brake "1" --> "1" Wheel
-BrakeController --|> LinkablePart
-BrakeController "1" --> "0..*" Brake
-Cockpit "1" --> "1" Pedal
-Cockpit "1" --> "1" SteerWheel
-Cockpit "1" --> "1" GearLever
-Car "1" --> "1" BrakeController
-Car "1" --> "1" Direction
-Car "1" --> "1" Transmission
-Car "1" --> "1" Motor
-Car "1" --> "1" Electronics
-Car "1" --> "1" Cockpit
-
-## Sintaxe
-
-- [PlantUML](https://plantuml.com/class-diagram)
+@enduml
+```

@@ -473,53 +473,6 @@ package CarComposition <<Rectangle>>
 		+ ~Pedal()
 	}
 
-	class Dae #wheat ##tomato
-	{
-		__ Attributes __
-		- direction: Direction*
-		- force: float
-		==
-		__ Methods __
-		+ use(p_angle: float): void
-		.. Getters/Setters ..
-		+ getDirection(): Direction*
-		+ setDirection(direction: Direction*): void
-		+ getForce(): float
-		+ setForce(force: float): void
-		.. Constructor/Destructor ..
-		+ Dae()
-		+ ~Dae()
-	}
-
-	class Direction #wheat ##tomato
-	{
-		__ Attributes __
-		- wheels: Wheel[]
-		==
-		__ Methods __
-		+ turn(p_angle: float): void
-		.. Getters/Setters ..
-		+ getWheels(): Wheel[]
-		+ setWheels(wheels: Wheel[]): void
-		.. Constructor/Destructor ..
-		+ Direction()
-		+ ~Direction()
-	}
-
-	class Electronics #wheat ##tomato
-	{
-		__ Attributes __
-		- dae: Dae
-		==
-		__ Methods __
-		.. Getters/Setters ..
-		+ getDae(): Dae
-		+ setDae(dae: Dae): void
-		.. Constructor/Destructor ..
-		+ Electronics()
-		+ ~Electronics()
-	}
-
 	class SteerWheel #wheat ##tomato
 	{
 		__ Attributes __
@@ -665,6 +618,53 @@ package CarComposition <<Rectangle>>
 		.. Constructor/Destructor ..
 		+ Cockpit()
 		+ ~Cockpit()
+	}
+
+	class Dae #wheat ##tomato
+	{
+		__ Attributes __
+		- direction: Direction*
+		- force: float
+		==
+		__ Methods __
+		+ use(p_angle: float): void
+		.. Getters/Setters ..
+		+ getDirection(): Direction*
+		+ setDirection(direction: Direction*): void
+		+ getForce(): float
+		+ setForce(force: float): void
+		.. Constructor/Destructor ..
+		+ Dae()
+		+ ~Dae()
+	}
+
+	class Direction #wheat ##tomato
+	{
+		__ Attributes __
+		- wheels: Wheel[]
+		==
+		__ Methods __
+		+ turn(p_angle: float): void
+		.. Getters/Setters ..
+		+ getWheels(): Wheel[]
+		+ setWheels(wheels: Wheel[]): void
+		.. Constructor/Destructor ..
+		+ Direction()
+		+ ~Direction()
+	}
+
+	class Electronics #wheat ##tomato
+	{
+		__ Attributes __
+		- dae: Dae
+		==
+		__ Methods __
+		.. Getters/Setters ..
+		+ getDae(): Dae
+		+ setDae(dae: Dae): void
+		.. Constructor/Destructor ..
+		+ Electronics()
+		+ ~Electronics()
 	}
 
 	class Car #wheat ##tomato

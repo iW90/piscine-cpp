@@ -362,11 +362,11 @@
 - Pedal "1" --> "1" LinkablePart
 - BrakeController --|> LinkablePart
 - BrakeController "1" *--> "0..*" Brake
-- Direction "1" o--> "0..*" Wheel
 - Brake "1" --> "1" Wheel
 - Crankshaft "1" --> "1" Transmission
 - ExplosionChamber "1" --> "1" Crankshaft
 - Injector "1" --> "1" ExplosionChamber
+- Direction "1" o--> "0..*" Wheel
 - DAE "1" --> "1" Direction
 - SteerWheel "1" --> "1" DAE
 - Cockpit "1" *--> "1" Pedal

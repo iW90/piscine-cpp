@@ -386,17 +386,18 @@
 
 ## Links
 
-- [PlantUML Generator](https://plantuml.com/)
+- [Plant Text](https://www.planttext.com/)
 - [PlantUML Syntax](https://plantuml.com/class-diagram)
 
 ### PlantUML Code
 
 ```
 @startuml
+!theme reddress-darkblue
 
 package CarComposition <<Rectangle>>
 {
-	class Wheel #wheat ##tomato
+	class Wheel ##white
 	{
 		==
 		__ Methods __
@@ -406,14 +407,14 @@ package CarComposition <<Rectangle>>
 		+ ~Wheel()
 	}
 
-	abstract class LinkablePart #white ##tomato
+	abstract class LinkablePart ##[bold]white
 	{
 		==
 		__ Methods __
 		+ {abstract} execute(p_pression: float): void
 	}
 
-	class Gear #wheat ##tomato
+	class Gear ##white
 	{
 		__ Attributes __
 		- demultiplier: int
@@ -427,7 +428,7 @@ package CarComposition <<Rectangle>>
 		+ ~Gear()
 	}
 
-	class GearLever #wheat ##tomato
+	class GearLever ##white
 	{
 		__ Attributes __
 		- gears: Gear[]
@@ -446,7 +447,7 @@ package CarComposition <<Rectangle>>
 		+ ~GearLever()
 	}
 
-	stereotype Singleton <<GearLever>> #white ##tomato
+	stereotype Singleton <<GearLever>> ##[bold]white
 	{
 		__ Attributes __
 		- {static} instance: Singleton*
@@ -459,7 +460,7 @@ package CarComposition <<Rectangle>>
 		+ ~Singleton()
 	}
 
-	class Pedal #wheat ##tomato
+	class Pedal ##white
 	{
 		__ Attributes __
 		- target: LinkablePart*
@@ -473,7 +474,7 @@ package CarComposition <<Rectangle>>
 		+ ~Pedal()
 	}
 
-	class SteerWheel #wheat ##tomato
+	class SteerWheel ##white
 	{
 		__ Attributes __
 		- dae: Dae*
@@ -488,7 +489,7 @@ package CarComposition <<Rectangle>>
 		+ ~SteerWheel()
 	}
 
-	class Motor #wheat ##tomato
+	class Motor ##white
 	{
 		__ Attributes __
 		- injector: Injector
@@ -509,7 +510,7 @@ package CarComposition <<Rectangle>>
 		+ ~Motor()
 	}
 
-	class Crankshaft #wheat ##tomato
+	class Crankshaft ##white
 	{
 		__ Attributes __
 		- transmission: Transmission*
@@ -524,7 +525,7 @@ package CarComposition <<Rectangle>>
 		+ ~Crankshaft()
 	}
 
-	class ExplosionChamber #wheat ##tomato
+	class ExplosionChamber ##white
 	{
 		__ Attributes __
 		- crankshaft: Crankshaft*
@@ -539,7 +540,7 @@ package CarComposition <<Rectangle>>
 		+ ~ExplosionChamber()
 	}
 
-	class Injector #wheat ##tomato
+	class Injector ##white
 	{
 		__ Attributes __
 		- explosionChamber: ExplosionChamber*
@@ -554,7 +555,7 @@ package CarComposition <<Rectangle>>
 		+ ~Injector()
 	}
 
-	class Transmission #wheat ##tomato
+	class Transmission ##white
 	{
 		__ Attributes __
 		- wheels: *Wheel[]
@@ -569,7 +570,7 @@ package CarComposition <<Rectangle>>
 		+ ~Transmission()
 	}
 
-	class Brake #wheat ##tomato
+	class Brake ##white
 	{
 		__ Attributes __
 		- wheel: Wheel*
@@ -585,7 +586,7 @@ package CarComposition <<Rectangle>>
 		+ ~Brake()
 	}
 
-	class Cockpit #wheat ##tomato
+	class Cockpit ##white
 	{
 		__ Attributes __
 		- pedal: Pedal
@@ -605,7 +606,7 @@ package CarComposition <<Rectangle>>
 		+ ~Cockpit()
 	}
 
-	class BrakeController #wheat ##tomato
+	class BrakeController ##white
 	{
 		__ Attributes __
 		- brakes: Brake[]
@@ -620,7 +621,7 @@ package CarComposition <<Rectangle>>
 		+ ~BrakeController()
 	}
 
-	class Dae #wheat ##tomato
+	class Dae ##white
 	{
 		__ Attributes __
 		- direction: Direction*
@@ -638,7 +639,7 @@ package CarComposition <<Rectangle>>
 		+ ~Dae()
 	}
 
-	class Direction #wheat ##tomato
+	class Direction ##white
 	{
 		__ Attributes __
 		- wheels: Wheel[]
@@ -653,7 +654,7 @@ package CarComposition <<Rectangle>>
 		+ ~Direction()
 	}
 
-	class Electronics #wheat ##tomato
+	class Electronics ##white
 	{
 		__ Attributes __
 		- dae: Dae
@@ -667,7 +668,7 @@ package CarComposition <<Rectangle>>
 		+ ~Electronics()
 	}
 
-	class Car #wheat ##tomato
+	class Car ##white
 	{
 		__ Attributes __
 		- brakeController: BrakeController

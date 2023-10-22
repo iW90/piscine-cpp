@@ -366,6 +366,7 @@
 - Crankshaft "1" --> "1" Transmission
 - ExplosionChamber "1" --> "1" Crankshaft
 - Injector "1" --> "1" ExplosionChamber
+- Electronics "1" --> "1" DAE
 - Direction "1" o--> "0..*" Wheel
 - DAE "1" --> "1" Direction
 - SteerWheel "1" --> "1" DAE
@@ -694,22 +695,19 @@ class Car #wheat ##tomato
 
 GearLever --|> Singleton
 GearLever "1" *--> "0..*" Gear
-
 Injector --|> LinkablePart
 BrakeController --|> LinkablePart
 Pedal "1" --> "1" LinkablePart
-
 BrakeController "1" *--> "0..*" Brake
 Brake "1" o--> "1" Wheel
 Transmission "1" o--> "0..*" Wheel
 Crankshaft "1" --> "1" Transmission
 ExplosionChamber "1" --> "1" Crankshaft
 Injector "1" --> "1" ExplosionChamber
-
+Electronics "1" --> "1" DAE
 Direction "1" o--> "0..*" Wheel
 DAE "1" --> "1" Direction
 SteerWheel "1" --> "1" DAE
-
 Cockpit "1" *--> "1" Pedal
 Cockpit "1" *--> "1" SteerWheel
 Cockpit "1" *--> "1" GearLever

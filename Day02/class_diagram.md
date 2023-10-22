@@ -569,21 +569,6 @@ package CarComposition <<Rectangle>>
 		+ ~Transmission()
 	}
 
-	class BrakeController #wheat ##tomato
-	{
-		__ Attributes __
-		- brakes: Brake[]
-		==
-		__ Methods __
-		+ execute(p_pression: float): void
-		.. Getters/Setters ..
-		+ getBrakes(): Brake[]
-		+ setBrakes(brakes: Brake[]): void
-		.. Constructor/Destructor ..
-		+ BrakeController()
-		+ ~BrakeController()
-	}
-
 	class Brake #wheat ##tomato
 	{
 		__ Attributes __
@@ -618,6 +603,21 @@ package CarComposition <<Rectangle>>
 		.. Constructor/Destructor ..
 		+ Cockpit()
 		+ ~Cockpit()
+	}
+
+	class BrakeController #wheat ##tomato
+	{
+		__ Attributes __
+		- brakes: Brake[]
+		==
+		__ Methods __
+		+ execute(p_pression: float): void
+		.. Getters/Setters ..
+		+ getBrakes(): Brake[]
+		+ setBrakes(brakes: Brake[]): void
+		.. Constructor/Destructor ..
+		+ BrakeController()
+		+ ~BrakeController()
 	}
 
 	class Dae #wheat ##tomato

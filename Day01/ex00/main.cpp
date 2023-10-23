@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:24:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:25:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 int main()
 {
 	// Criando
+	
 	Tool* shovel = new Shovel;
 	Tool* hammer = new Hammer;
 
 	Position pos = {5, 6, 7};
-	Statistic stat = {0, 5};
+	Statistic stat = {42, 84};
 	std::vector<Tool*> tls;
 	std::vector<Workshop*> wls;
 	Worker* worker1 = new Worker(pos, stat, tls, wls);
@@ -73,10 +74,18 @@ int main()
 
 
 	// Aggregation
-	std::cout << "Endereço de worker1: " << worker1->getStat().exp << std::endl;
+	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	delete worker1;
-	std::cout << "Endereço de worker1: " << worker1->getStat().exp << std::endl;
+	//std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	shovelUses = shovel->getNumberOfUses();
+
+
+	delete worker2;
+	delete shovel;
+	delete hammer;
+	delete workshop1;
+	delete workshop2;
+	
 
 	return 0;
 }

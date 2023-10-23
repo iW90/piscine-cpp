@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Shovel.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:00:03 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:35:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:40:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Shovel::Shovel()
 
 Shovel::~Shovel()
 {
-	//worker->removeTool(this);
+	if (this->worker)
+		this->worker->removeTool(this);
 }
 
 int Shovel::getNumberOfUses() const

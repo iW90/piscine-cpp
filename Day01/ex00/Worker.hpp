@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Worker.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:28:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:56:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ class Worker
 		Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList, const std::vector<Workshop*>& workshopList);
 		~Worker();
 
-		// Getters/Setters
 		Statistic getStat() const;
 		void setStat(const Statistic& stats);
 
@@ -65,6 +64,7 @@ class Worker
 		Tool* getTool(Tool* tool) const;
 		Workshop* getWorkshop(Workshop* workshop) const;
 
+		void removeWorkshop(Workshop* workshop);
 		void removeTool(Tool* tool);
 		void addTool(Tool* tool);
 		void work(int xp);

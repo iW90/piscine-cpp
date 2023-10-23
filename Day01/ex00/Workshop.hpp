@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Workshop.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:17 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:26:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:08:29 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ class Workshop
 		void	removeWorker(Worker* worker);
 		void	addWorker(Worker* worker, ToolType toolType);
 		void	executeWorkDay(int xp);
-		
 };
 
 #endif

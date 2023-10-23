@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Tool.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:41:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:29:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:15:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOOL_HPP
 # define TOOL_HPP
-
-# include "Worker.hpp"
 
 class Worker;
 

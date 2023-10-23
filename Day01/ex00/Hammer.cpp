@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Hammer.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:58:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:35:29 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:24:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Hammer::Hammer()
 
 Hammer::~Hammer()
 {
-	//worker->removeTool(this);
+	if (this->worker)
+		this->worker->removeTool(this);
 }
 
 int Hammer::getNumberOfUses() const

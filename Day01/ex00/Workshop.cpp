@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Workshop.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:31:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:56:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 Workshop::Workshop() {}
 
-Workshop::~Workshop() {}
+Workshop::~Workshop()
+{
+	//for (size_t i = 0; i < workers.size(); ++i)
+	//	workers[i]->removeWorker(this);
+		
+		
+}
 
 Worker* Workshop::getWorker(Worker* worker) const
 {

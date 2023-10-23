@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Worker.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:35:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:51:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ Worker::Worker(const Position& position, const Statistic& statistics, const std:
 
 Worker::~Worker()
 {
-//	for (size_t i = 0; i < tools.size(); ++i)
-//		tools[i]->setWorker(0);
-//	for (size_t i = 0; i < workshops.size(); ++i)
-//		workshops[i]->removeWorker(this);
+	for (size_t i = 0; i < tools.size(); ++i)
+		tools[i]->setWorker(0);
+	for (size_t i = 0; i < workshops.size(); ++i)
+		workshops[i]->removeWorker(this);
 }
 
 Statistic Worker::getStat() const
 {
-	return stat;
+	return (stat);
 }
 
 void Worker::setStat(const Statistic& stats)
@@ -35,7 +35,7 @@ void Worker::setStat(const Statistic& stats)
 
 Position Worker::getCoordonnee() const
 {
-	return coordonnee;
+	return (coordonnee);
 }
 
 void Worker::setCoordonnee(const Position& pos)
@@ -47,7 +47,7 @@ const std::vector<Tool*> &Worker::getTools() const
 {
 	return (tools);
 }
-
+	
 void Worker::setTool(Tool* tool)
 {
 	for (size_t i = 0; i < tools.size(); ++i)

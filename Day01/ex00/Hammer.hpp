@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Hammer.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:58:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:19:38 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:13:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define HAMMER_HPP
 
 # include "Tool.hpp"
-
-class Worker;
+# include "Worker.hpp"
 
 class Hammer : public Tool
 {
@@ -24,12 +23,11 @@ class Hammer : public Tool
 		Hammer();
 		~Hammer();
 
-		// Getters
+		// Getters/Setters
 		int		getNumberOfUses() const;
-		Worker*	getWorker() const;
-
-		// Setters
 		void	setNumberOfUses(int uses);
+
+		Worker*	getWorker() const;
 		void	setWorker(Worker* worker);
 
 		// Implementação do método use

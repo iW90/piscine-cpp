@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Transmission.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 15:57:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:42:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,14 @@ class Transmission
 			currentGear = gear;
 		}
 
-		void	shiftUp();
-		void	shiftDown();
+		void	shiftUp()
+		{
+			setCurrentGear(getCurrentGear() + 1);
+		}
+		void	shiftDown()
+		{
+			setCurrentGear(getCurrentGear() - 1);
+		}
 };
 
 #endif

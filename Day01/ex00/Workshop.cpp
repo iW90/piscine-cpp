@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 10:56:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:39:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Workshop::Workshop() {}
 Workshop::~Workshop()
 {
 	//for (size_t i = 0; i < workers.size(); ++i)
-	//	workers[i]->removeWorker(this);
-		
-		
+	//	for (size_t j = 0; j < workers[i].size(); j++)
+	//		workers[i][j]->removeWorshop(this);
 }
 
 Worker* Workshop::getWorker(Worker* worker) const
@@ -65,8 +64,14 @@ void Workshop::removeWorker(Worker* worker)
 	if (!worker)
 		return ;
 	for (size_t i = 0; i < workers.size(); ++i)
+	{
 		if (workers[i] == worker)
+		{
+			workers[i]->removeWorkshop(this);
+			workers.erase(workers.begin() + i);
 			return ;
+		}
+	}
 	std::cout << "This worker is not in this workshop." << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 10:51:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:21:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,4 +129,19 @@ void Worker::work(int xp)
 		this->stat.exp += xp;
 		this->stat.level = this->stat.exp / 100;
 	}
+}
+
+void Worker::removeWorkshop(Workshop* workshop)
+{
+	if (!workshop)
+		return ;
+	for (size_t i = 0; i < workshops.size(); ++i)
+	{
+		if (workshops[i] == workshop)
+		{
+			workshops.erase(workshops.begin() + i);
+			return ;
+		}
+	}
+	std::cout << "This worker is not in this workshop." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 10:56:25 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:20:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ class Worker
 		Tool* getTool(Tool* tool) const;
 		Workshop* getWorkshop(Workshop* workshop) const;
 
-		void removeWorkshop(Workshop* workshop);
 		void removeTool(Tool* tool);
 		void addTool(Tool* tool);
 		void work(int xp);
+		void removeWorkshop(Workshop* workshop);
 };
 
 template <typename T>

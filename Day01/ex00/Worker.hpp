@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:25:17 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:41:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "Tool.hpp"
 # include "Shovel.hpp"
 # include "Hammer.hpp"
-# include "Workshop.hpp"
 # include <vector>
 # include <string>
 # include <iostream>
@@ -33,6 +32,8 @@ struct Statistic
 	int level;
 	int exp;
 };
+
+class Workshop;
 
 class Worker
 {
@@ -61,12 +62,8 @@ class Worker
 
 		// Methods
 		Tool* getTool(Tool* tool) const;
-
 		Workshop* getWorkshop(Workshop* workshop) const;
 
-		const std::vector<Workshop*> &getWorkshops() const;
-
-		// Methods
 		void removeTool(Tool* tool);
 		void addTool(Tool* tool);
 		void work(int xp);

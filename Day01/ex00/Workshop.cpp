@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 11:39:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:42:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ Workshop::Workshop() {}
 
 Workshop::~Workshop()
 {
-	//for (size_t i = 0; i < workers.size(); ++i)
-	//	for (size_t j = 0; j < workers[i].size(); j++)
-	//		workers[i][j]->removeWorshop(this);
+	for (size_t i = 0; i < workers.size(); ++i)
+	{
+		if ()
+			workers[i]->removeWorkshop(this);
+	}
 }
 
 Worker* Workshop::getWorker(Worker* worker) const

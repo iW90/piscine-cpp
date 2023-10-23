@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:41:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:28:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Tool.hpp"
 # include "Shovel.hpp"
 # include "Hammer.hpp"
+# include "Workshop.hpp"
 # include <vector>
 # include <string>
 # include <iostream>

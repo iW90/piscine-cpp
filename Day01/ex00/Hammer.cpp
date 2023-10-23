@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:58:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:19:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:35:29 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ Hammer::Hammer()
 
 Hammer::~Hammer()
 {
-	//for (size_t i = 0; i < workers.size(); ++i)
-	//	tools[i]->setWorker(0);
-		
 	//worker->removeTool(this);
 }
 

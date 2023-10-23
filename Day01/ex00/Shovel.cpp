@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:00:03 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 09:19:15 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:35:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ Shovel::Shovel()
 	worker = 0;
 }
 
-Shovel::~Shovel() {}
+Shovel::~Shovel()
+{
+	//worker->removeTool(this);
+}
 
 int Shovel::getNumberOfUses() const
 {

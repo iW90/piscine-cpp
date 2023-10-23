@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 22:18:52 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:35:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@ Worker::Worker(const Position& position, const Statistic& statistics, const std:
 
 Worker::~Worker()
 {
-	for (size_t i = 0; i < tools.size(); ++i)
-		tools[i]->setWorker(0);
+//	for (size_t i = 0; i < tools.size(); ++i)
+//		tools[i]->setWorker(0);
 //	for (size_t i = 0; i < workshops.size(); ++i)
-//	{
-//		for (size_t j = 0; j < workshops[i].size(); ++i)
-//		{
-//			workshops[i][j].erase();
-//		}
-//	}
+//		workshops[i]->removeWorker(this);
 }
 
 Statistic Worker::getStat() const

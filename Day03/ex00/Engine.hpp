@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 20:41:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:56:15 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Engine
 		bool	started;
 		int		speed;
 	public:
-		Engine();
-		~Engine();
+		Engine() : started(false), speed(0) {}
+		~Engine() {}
 
 		bool	isStarted() const
 		{

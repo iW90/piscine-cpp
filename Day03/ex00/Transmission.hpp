@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 20:42:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:56:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Transmission
 	private:
 		int		currentGear;
 	public:
-		Transmission();
-		~Transmission();
+		Transmission() : currentGear(0) {}
+		~Transmission() {}
 
 		int		getCurrentGear() const
 		{

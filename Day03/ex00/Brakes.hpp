@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:58:37 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 17:28:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:56:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Brakes
 	private:
 		int		forceApplied;
 	public:
-		Brakes() {};
+		Brakes() : forceApplied(0) {};
 		~Brakes() {};
 
 		int		getForceApplied() const

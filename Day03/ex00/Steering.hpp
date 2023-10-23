@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Steering.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:58:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 15:58:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:56:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Steering
 	private:
 		int		wheelAngle;
 	public:
-		Steering();
-		~Steering();
+		Steering() : wheelAngle(0) {}
+		~Steering() {}
 
 		int		getWheelAngle() const
 		{

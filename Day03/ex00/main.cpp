@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:35:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:32:42 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:51:10 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,36 @@
 int main()
 {
 	// Criando um carro
-	Car myCar;
+	Car fusca;
 
 	// Iniciando o motor
-	myCar.getEngine().start();
+	fusca.getEngine().start();
 
 	// Acelerando o carro
-	myCar.getEngine().accelerate(60);
-	std::cout << "Speed: " << myCar.getEngine().getSpeed() << " km/h" << std::endl;
+	fusca.getEngine().accelerate(60);
+	std::cout << "Speed: " << fusca.getEngine().getSpeed() << " km/h" << std::endl;
 
 	// Trocando de marcha
-	myCar.getTransmission().shiftUp();
-	std::cout << "Current Gear: " << myCar.getTransmission().getCurrentGear() << std::endl;
+	fusca.getTransmission().shiftUp();
+	std::cout << "Current Gear: " << fusca.getTransmission().getCurrentGear() << std::endl;
 
 	// Virando o volante
-	myCar.getSteering().turn(30);
-	std::cout << "Wheel Angle: " << myCar.getSteering().getWheelAngle() << " degrees" << std::endl;
+	fusca.getSteering().turn(30);
+	std::cout << "Wheel Angle: " << fusca.getSteering().getWheelAngle() << " degrees" << std::endl;
 
 	// Aplicando força nos freios
-	myCar.getBrakes().applyForce(30);
-	std::cout << "Brake Force Applied: " << myCar.getBrakes().getForceApplied() << " N" << std::endl;
+	fusca.getBrakes().applyForce(30);
+	std::cout << "Brake Force Applied: " << fusca.getBrakes().getForceApplied() << " N" << std::endl;
 
 	// Parando o motor e aplicando freios de emergência
-	myCar.getEngine().stop();
-	myCar.getBrakes().applyEmergency();
+	fusca.getEngine().stop();
+	fusca.getBrakes().applyEmergency();
 
 	return (0);
 }
 
 /*
-** g++ -std=c++98 main.cpp && ./main
+** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./main
 */
 
 /*

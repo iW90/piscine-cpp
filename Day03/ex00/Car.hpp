@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:35:13 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 17:28:34 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:48:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,25 @@ class Car
 		Steering		steering;
 		Brakes			brakes;
 	public:
-		Car();
-		~Car();
+		Car() {};
+		~Car() {};
 
-		Engine& getEngine() const;
-		Transmission& getTransmission() const;
-		Steering& getSteering() const;
-		Brakes& getBrakes() const;
+		Engine& getEngine()
+		{
+			return engine;
+		}
+		Transmission& getTransmission()
+		{
+			return transmission;
+		}
+		Steering& getSteering()
+		{
+			return steering;
+		}
+		Brakes& getBrakes()
+		{
+			return brakes;
+		}
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 11:20:52 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:26:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Worker
 		std::vector<Workshop*>	workshops;
 
 	public:
-		Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList, const std::vector<Workshop*>& workshopList);
+		Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList);
 		~Worker();
 
 		Statistic getStat() const;

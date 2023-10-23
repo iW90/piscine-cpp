@@ -6,21 +6,18 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 11:42:19 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:34:30 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Workshop.hpp"
 
-Workshop::Workshop() {}
+Workshop::Workshop() : workers() {}
 
 Workshop::~Workshop()
 {
 	for (size_t i = 0; i < workers.size(); ++i)
-	{
-		if ()
-			workers[i]->removeWorkshop(this);
-	}
+		workers[i]->removeWorkshop(this);
 }
 
 Worker* Workshop::getWorker(Worker* worker) const
@@ -52,11 +49,20 @@ void Workshop::addWorker(Worker* worker, ToolType toolType)
 		}
 	}
 	if (!toolType)
+	{
 		this->setWorker(worker);
+		worker->setWorkshop(this);
+	}
 	else if (toolType == SHOVEL && getToolOfType<Shovel>(worker))
+	{
 		this->setWorker(worker);
+		worker->setWorkshop(this);
+	}
 	else if (toolType == HAMMER && getToolOfType<Hammer>(worker))
+	{
 		this->setWorker(worker);
+		worker->setWorkshop(this);
+	}
 	else
 		std::cout << "This worker does not have the right tool." << std::endl;
 }

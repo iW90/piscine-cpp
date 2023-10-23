@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 10:25:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:35:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 	Position pos = {5, 6, 7};
 	Statistic stat = {42, 84};
 	std::vector<Tool*> tls;
-	std::vector<Workshop*> wls;
-	Worker* worker1 = new Worker(pos, stat, tls, wls);
-	Worker* worker2 = new Worker(pos, stat, tls, wls);
+
+	Worker* worker1 = new Worker(pos, stat, tls);
+	Worker* worker2 = new Worker(pos, stat, tls);
 
 	Workshop* workshop1 = new Workshop;
 	Workshop* workshop2 = new Workshop;
@@ -67,12 +67,12 @@ int main()
 	Tool* shovelTool = getToolOfType<Shovel>(worker1);
 	std::cout << "Endereço de shovel (toolType): " << shovelTool << std::endl;
 
-	workshop1->addWorker(worker1, NONE);
-	workshop2->addWorker(worker1, HAMMER);
+	workshop1->addWorker(worker1, NONE); //entra no workshop
+	workshop1->addWorker(worker1, SHOVEL); //já está no workshop
+	workshop2->addWorker(worker1, HAMMER); //não possui a ferramenta
 	
-
-
-
+	workshop1->executeWorkDay(30);
+	
 	// Aggregation
 	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	delete worker1;
@@ -86,6 +86,5 @@ int main()
 	delete workshop1;
 	delete workshop2;
 	
-
 	return 0;
 }

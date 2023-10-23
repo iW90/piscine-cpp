@@ -6,21 +6,22 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 11:21:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:33:30 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Worker.hpp"
 
-Worker::Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList, const std::vector<Workshop*>	&workshopsList)
-		: coordonnee(position), stat(statistics), tools(toolList), workshops(workshopsList) {}
+Worker::Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList)
+		: coordonnee(position), stat(statistics), tools(toolList), workshops() {}
 
 Worker::~Worker()
 {
 	for (size_t i = 0; i < tools.size(); ++i)
 		tools[i]->setWorker(0);
-	for (size_t i = 0; i < workshops.size(); ++i)
-		workshops[i]->removeWorker(this);
+	if (!workshops.empty())
+		for (size_t i = 0; i < workshops.size(); ++i)
+			workshops[i]->removeWorker(this);
 }
 
 Statistic Worker::getStat() const
@@ -123,7 +124,7 @@ void Worker::addTool(Tool* tool)
 
 void Worker::work(int xp)
 {
-	if (!this->workshops.empty())
+	if (!workshops.empty())
 	{
 		std::cout << "working." << std::endl;
 		this->stat.exp += xp;

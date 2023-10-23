@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:12:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 15:35:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:39:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int main()
 	// Aggregation
 	std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	delete worker1;
-	//std::cout << "Endereço de worker1: " << worker1->getStat().level << std::endl;
 	shovelUses = shovel->getNumberOfUses();
 
+	std::cout << "Shovel Uses: " << shovel->getNumberOfUses() << std::endl;
 
 	delete worker2;
 	delete shovel;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Engine.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:57:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 15:57:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:30:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,14 @@ class Engine
 /*
 ** Cuida das operações do motor.
 */
+
+bool	isStarted()
+{
+	return started;
+}
+
+int		getSpeed()
+{
+	return speed;
+}
+

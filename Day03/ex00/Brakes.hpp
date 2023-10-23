@@ -13,19 +13,34 @@
 #ifndef BRAKES_HPP
 # define BRAKES_HPP
 
+# define FORCE_MAX 200;
+
+#include <iostream>
+
 class Brakes
 {
 	private:
 		int		forceApplied;
 	public:
-		Brakes();
-		~Brakes();
+		Brakes() {};
+		~Brakes() {};
 
-		int		getForceApplied() const;
-		void	setForceApplied(int force);
+		int		getForceApplied() const
+		{
+			return (forceApplied);
+		}
+		void	setForceApplied(int force)
+		{
+			forceApplied = force;
+		}
 
-		void	applyForce(int force);
-		void	applyEmergency();
+		void	applyForce(int force)
+		{
+			this->setForceApplied(force);
+		}
+		void	applyEmergency()
+		{
+		}
 };
 
 #endif
@@ -34,22 +49,3 @@ class Brakes
 ** É responsável pelo sistema de freios.
 */
 
-int	getForceApplied()
-{
-	return (forceApplied);
-}
-
-void setForceApplied(int force)
-{
-	forceApplied = force;
-}
-
-void applyForce(int force)
-{
-	this->setForceApplied(force);
-}
-
-void applyEmergency()
-{
-	std::cout << "Apply Emergency." << std::endl;
-}

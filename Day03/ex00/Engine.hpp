@@ -22,15 +22,42 @@ class Engine
 		Engine();
 		~Engine();
 
-		bool	isStarted() const;
-		int		getSpeed() const;
-		void	setStarted(bool started);
-		void	setSpeed(int speed);
+		bool	isStarted() const
+		{
+			return started;
+		}
 
-		void	start();
-		void	stop();
-		void	accelerate(int speed);
-		void	reverse();
+		int		getSpeed() const
+		{
+			return speed;
+		}
+		void	setStarted(bool start)
+		{
+			started = start;
+		}
+		void	setSpeed(int spd)
+		{
+			speed = spd;
+		}
+
+		//methods
+		void	start()
+		{
+			started = 1;
+		}
+		void	stop()
+		{
+			started = 0;
+		}
+		void	accelerate(int spd)
+		{
+			speed += spd;
+		}
+		void	reverse()
+		{
+			if (speed > 0)
+				speed = 0;
+		}
 };
 
 #endif
@@ -38,14 +65,3 @@ class Engine
 /*
 ** Cuida das operações do motor.
 */
-
-bool	isStarted()
-{
-	return started;
-}
-
-int		getSpeed()
-{
-	return speed;
-}
-

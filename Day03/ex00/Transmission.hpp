@@ -21,8 +21,14 @@ class Transmission
 		Transmission();
 		~Transmission();
 
-		int		getCurrentGear() const;
-		void	setCurrentGear(int gear);
+		int		getCurrentGear() const
+		{
+			return currentGear;
+		}
+		void	setCurrentGear(int gear)
+		{
+			currentGear = gear;
+		}
 
 		void	shiftUp();
 		void	shiftDown();

@@ -21,11 +21,23 @@ class Steering
 		Steering();
 		~Steering();
 
-		int		getWheelAngle() const;
-		void	setWheelAngle(int angle);
+		int		getWheelAngle() const
+		{
+			return wheelAngle;
+		}
+		void	setWheelAngle(int angle)
+		{
+			wheelAngle = angle;
+		}
 
-		void	turn(int angle);
-		void	straighten();
+		void	turn(int angle)
+		{
+			setWheelAngle(angle);
+		}
+		void	straighten()
+		{
+			setWheelAngle(0);
+		}
 };
 
 #endif

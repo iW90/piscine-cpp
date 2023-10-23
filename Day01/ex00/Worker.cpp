@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:25:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:31:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void Worker::work(int xp)
 {
 	if (!this->workshops.empty())
 	{
-		std::cout << "Worker is working." << std::endl;
+		std::cout << "working." << std::endl;
 		this->stat.exp += xp;
 		this->stat.level = this->stat.exp / 100;
 	}

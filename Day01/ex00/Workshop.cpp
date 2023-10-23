@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Workshop.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:35:09 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 17:51:54 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:31:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,13 @@ void Workshop::removeWorker(Worker* worker)
 		if (workers[i] == worker)
 			return ;
 	std::cout << "This worker is not in this workshop." << std::endl;
+}
+
+void Workshop::executeWorkDay(int xp)
+{
+	for (size_t i = 0; i < workers.size(); ++i)
+	{
+		std::cout << "Worker " << i << " is ";
+		(*workers[i]).work(xp);
+	}
 }

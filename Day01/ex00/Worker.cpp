@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 19:25:00 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 21:31:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:18:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,18 @@
 Worker::Worker(const Position& position, const Statistic& statistics, const std::vector<Tool*>& toolList, const std::vector<Workshop*>	&workshopsList)
 		: coordonnee(position), stat(statistics), tools(toolList), workshops(workshopsList) {}
 
-Worker::~Worker() {}
+Worker::~Worker()
+{
+	for (size_t i = 0; i < tools.size(); ++i)
+		tools[i]->setWorker(0);
+//	for (size_t i = 0; i < workshops.size(); ++i)
+//	{
+//		for (size_t j = 0; j < workshops[i].size(); ++i)
+//		{
+//			workshops[i][j].erase();
+//		}
+//	}
+}
 
 Statistic Worker::getStat() const
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Shovel.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:56:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 17:01:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:19:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 
 class Shovel : public Tool
 {
-	private:
-		int		numberOfUses;
-		Worker*	worker;
-
 	public:
 		// Construtor e destrutor
 		Shovel();

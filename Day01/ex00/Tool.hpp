@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Tool.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:41:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/20 15:42:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:19:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ class Worker;
 
 class Tool
 {
+	protected:
+		int		numberOfUses;
+		Worker*	worker;
+
 	public:
 		// Construtor e destrutor
 		Tool();

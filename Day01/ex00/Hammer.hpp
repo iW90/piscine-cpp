@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:58:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/19 20:22:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:19:38 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ class Worker;
 
 class Hammer : public Tool
 {
-	private:
-		int		numberOfUses;
-		Worker*	worker;
-		
 	public:
 		// Construtor e destrutor
 		Hammer();

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   salariedEmployee.hpp                               :+:      :+:    :+:   */
+/*   NeedMoreClassRoomForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 19:27:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 12:07:29 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/24 16:42:28 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/24 16:42:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SALARIED_EMPLOYEE_HPP
-# define SALARIED_EMPLOYEE_HPP
-
-# include "employee.hpp"
-
-class SalariedEmployee : public Employee
+class NeedMoreClassRoomForm : public Form
 {
+	private:
+
 	public:
-		int executeWorkday();
-
-		SalariedEmployee() {};
-		~SalariedEmployee() {};
+		void execute();
 };
-
-#endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   employeeManagement.hpp                             :+:      :+:    :+:   */
+/*   EmployeeManagement.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 12:14:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:29:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,7 @@
 # include <iostream>
 # include <vector>
 
-class IEmployeeManager
-{
-	public:
-		virtual void addEmployee(Employee*) = 0;
-		virtual void removeEmployee(Employee*) = 0;
-		virtual void executeWorkday() = 0;
-		virtual void calculatePayroll() = 0;
-};
-
-class EmployeeManager : public IEmployeeManager
+class EmployeeManager
 {
 	private:
 		std::vector<Employee*> employees;
@@ -45,7 +36,10 @@ class EmployeeManager : public IEmployeeManager
 		void executeWorkday()
 		{
 			for (size_t i = 0; i < employees.size(); ++i)
+			{
 				std::cout << "Worker " << i << " working.";
+				employees[i].
+			}
 		}
 
 		void calculatePayroll()

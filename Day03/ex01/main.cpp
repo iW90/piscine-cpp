@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 14:15:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:56:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:05:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,51 @@
 
 int main()
 {
-	std::vector<std::pair<int, std::string> > articles = {{2, "item1"}, {3, "item2"}};
-	Date tuesday_date = {22, 10, 2023};
-	Date other_date = {23, 10, 2023};
+	// Resources
+	std::vector<Article> articles;
+    
+    Article article1;
+    article1.quantity = 3;
+    article1.name = "Article1";
+    article1.price = 50.0;
+    articles.push_back(article1);
 
-	Command* regular = new Command(1, Date{22, 10, 2023}, "Cliente1", articles);
-	Command* thuesdayDiscount = new ThuesdayDiscountCommand(1, tuesday_date, "Client2", articles);
-	Command* packageDiscount = new PackageReductionDiscountCommand(2, other_date, "Client3", articles);
+    Article article2;
+    article2.quantity = 2;
+    article2.name = "Article2";
+    article2.price = 30.0;
+    articles.push_back(article2);
 
-	// Cálculo do preço total para cada comando
-	double priceRegular = regular->get_total_price();
-	double pricePackageDiscount = packageDiscount->get_total_price();
-	double pricethuesdayDiscount = thuesdayDiscount->get_total_price();
+	articles.push_back(article1);
+	articles.push_back(article2);
 
-	std::cout << "Total Price with Regular: " << regular->get_total_price() << " euros" << std::endl;
-	std::cout << "Total Price with Tuesday Discount: " << thuesdayDiscount->get_total_price() << " euros" << std::endl;
-	std::cout << "Total Price with Package Reduction Discount: " << packageDiscount->get_total_price() << " euros" << std::endl;
+    DayOfWeek tuesday = TUESDAY;
+	DayOfWeek sunday = SUNDAY;
+	DayOfWeek thursday = THURSDAY;
+	
+    std::string client1 = "Client1";
+	std::string client2 = "Client2";
+	std::string client3 = "Client3";
 
-	delete regular;
-	delete thuesdayDiscount;
-	delete packageDiscount;
 
-	return (0);
+	// Objetos
+	Command command(1, thursday, client1, articles);
+	ThuesdayDiscountCommand thuesdayCommand(2, tuesday, client2, articles);
+	PackageReductionDiscountCommand packageCommand(3, sunday, client3, articles);
+
+	// Cálculo de preços
+	double totalPrice = command.get_total_price(); //virtual
+	double thuesdayPrice = thuesdayCommand.get_total_price();
+	double packagePrice = packageCommand.get_total_price();
+
+	// Visualização dos preços
+	std::cout << "Total Price (Command): " << totalPrice << std::endl;
+	std::cout << "Total Price (ThuesdayDiscountCommand): " << thuesdayPrice << std::endl;
+	std::cout << "Total Price (PackageReductionDiscountCommand): " << packagePrice << std::endl;
+
+	return 0;
 }
+
 
 /*
 ** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:51:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:47:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:54:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main()
 
 
 /*
-** g++ -std=c++98 main.cpp && ./main
+** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out
 */
 
 /*

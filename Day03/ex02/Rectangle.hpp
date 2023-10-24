@@ -6,13 +6,13 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:04:14 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 19:16:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:52:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RECTANGLE_HPP
 # define RECTANGLE_HPP
-# include "shape.hpp"
+# include "Shape.hpp"
 
 class Rectangle : public Shape
 {
@@ -22,7 +22,7 @@ class Rectangle : public Shape
 
 	public:
 		Rectangle(double w, double h) : width(w), height(h) {}
-		~Rectangle();
+		~Rectangle() {}
 
 		double calculateArea() const
 		{

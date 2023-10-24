@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:35:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/23 20:51:10 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:54:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 }
 
 /*
-** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./main
+** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out
 */
 
 /*

@@ -6,14 +6,14 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:46:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:33:06 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:54:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shape.hpp"
-#include "rectangle.hpp"
-#include "triangle.hpp"
-#include "circle.hpp"
+#include "Shape.hpp"
+#include "Rectangle.hpp"
+#include "Triangle.hpp"
+#include "Circle.hpp"
 #include <iostream>
 
 int main()
@@ -31,7 +31,7 @@ int main()
 }
 
 /*
-** g++ -std=c++98 main.cpp && ./main
+** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out
 */
 
 /*

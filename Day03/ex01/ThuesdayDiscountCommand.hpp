@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   thuesdayDiscount.hpp                               :+:      :+:    :+:   */
+/*   ThuesdayDiscountCommand.hpp                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 14:15:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 14:15:08 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:56:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef THUESDAY_DISCOUNT_COMMAND_HPP
 # define THUESDAY_DISCOUNT_COMMAND_HPP
 
-# include "command.hpp"
+# include "Command.hpp"
 
 class ThuesdayDiscountCommand : public Command
 {

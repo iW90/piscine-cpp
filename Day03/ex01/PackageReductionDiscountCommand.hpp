@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   packageReductionDiscount.hpp                       :+:      :+:    :+:   */
+/*   PackageReductionDiscountCommand.hpp                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 14:15:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 14:15:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 07:57:22 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PACKAGE_REDUCTION_DISCOUNT_COMMAND_HPP
 # define PACKAGE_REDUCTION_DISCOUNT_COMMAND_HPP
 
-# include "command.hpp"
+# include "Command.hpp"
 
 class PackageReductionDiscountCommand : public Command
 {

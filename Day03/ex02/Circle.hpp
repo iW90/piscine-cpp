@@ -21,7 +21,7 @@ class Circle : public Shape
 
 	public:
 		Circle(double r) : radius(r) {}
-		~Circle();
+		~Circle() {}
 
 		double calculateArea() const
 		{

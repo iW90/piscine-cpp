@@ -16,6 +16,10 @@
 
 class Rectangle : public Shape
 {
+	private:
+		double width;
+		double height;
+
 	public:
 		Rectangle(double w, double h) : width(w), height(h) {}
 		~Rectangle();
@@ -29,10 +33,6 @@ class Rectangle : public Shape
 		{
 			return 2 * (width + height);
 		}
-
-	private:
-		double width;
-		double height;
 };
 
 #endif

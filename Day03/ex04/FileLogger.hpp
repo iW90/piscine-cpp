@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FileLogger.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:43:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:44:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:51:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ class FileLogger : public ILogger
 
 #endif
 
-
 // FileLogger.cpp
 FileLogger::FileLogger(const char* filename, const char* header) : filename(filename), header(header) {}
 
 void FileLogger::write(const char* message)
 {
 	std::ofstream file(filename, std::ios::app);
-	if (file.is_open()) {
+	if (file.is_open())
+	{
 		file << header << message << "\n";
 		file.close();
 	}

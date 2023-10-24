@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hourlyEmployee.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:30 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:17:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:07:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HourlyEmployee : public Employee
 		int executeWorkday();
 
 		HourlyEmployee() {};
-		~HourlyEmployee();
+		~HourlyEmployee() {};
 };
 
 #endif

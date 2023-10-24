@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   StreamLogger.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:40:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:43:08 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:36:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// StreamLogger.hpp
 #ifndef STREAMLOGGER_HPP
 # define STREAMLOGGER_HPP
 

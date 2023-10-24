@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   employeeManagement.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:01:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:14:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ class EmployeeManager : public IEmployeeManager
 
 		void executeWorkday()
 		{
-			for (Employee* employee : employees)
-				employee->executeWorkday();
+			for (size_t i = 0; i < employees.size(); ++i)
+				std::cout << "Worker " << i << " working.";
 		}
 
 		void calculatePayroll()

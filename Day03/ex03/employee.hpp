@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   employee.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:26:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:31:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:15:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Employee
 		virtual int executeWorkday() = 0;
 
 		Employee(int hourlyValue) : hourlyValue(hourlyValue) {}
-		~Employee();
+		~Employee() {};
 		int getHourlyValue() const { return hourlyValue; }
 		void setHourlyValue(int hv) { hourlyValue = hv; };
 };
@@ -43,7 +43,7 @@ class Apprentice : public Employee
 		int executeWorkday();
 		void logSchoolHours(int hours);
 
-		Apprentice(int school, int work) : Employee(0), schoolHours(school), workHours(work) {}
+		Apprentice() : Employee(0), schoolHours(0), workHours(0) {}
 		~Apprentice();
 };
 

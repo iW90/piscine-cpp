@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   salariedEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:27:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/22 20:16:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:07:29 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class SalariedEmployee : public Employee
 		int executeWorkday();
 
 		SalariedEmployee() {};
-		~SalariedEmployee();
+		~SalariedEmployee() {};
 };
 
 #endif

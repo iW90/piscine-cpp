@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:51:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:54:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:54:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 {
 	// Crie instâncias de diferentes tipos de loggers
 	FileLogger fileLogger("log.txt", "File Logger: ");
-	StreamLogger consoleLogger(std::cout, "Console Logger: ");
+	StreamLogger consoleLogger(std::cerr, "Console Logger: ");
 
 	// Crie um vetor de ILogger*
 	std::vector<ILogger*> loggers;
@@ -37,8 +37,6 @@ int main()
 
 	return (0);
 }
-
-
 
 /*
 ** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out

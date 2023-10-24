@@ -422,7 +422,7 @@ package CarComposition <<Rectangle>>
 		__ Methods __
 		.. Getters/Setters ..
 		+ getDemultiplier(): int
-		+ setDemultiplier(demulstiplier: int): void
+		+ setDemultiplier(demultiplier: int): void
 		.. Constructor/Destructor ..
 		+ Gear()
 		+ ~Gear()

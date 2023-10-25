@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:05:25 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:53:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:20:23 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class Circle : public Shape
 		Circle(double r) : radius(r) {}
 		~Circle() {}
 
-		double calculateArea() const
+		double getArea() const
 		{
 			return 3.14 * radius * radius; // Aproximação de pi
 		}
 
-		double calculatePerimeter() const
+		double getPerimeter() const
 		{
 			return 2 * 3.14 * radius; // Aproximação de pi
 		}

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:46:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:54:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:20:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	Shape* shapes[] = {&rectangle, &triangle, &circle};
 
 	for (int i = 0; i < 3; i++)
-		std::cout << "Shape " << i + 1 << " - Area: " << shapes[i]->calculateArea() << ", Perimeter: " << shapes[i]->calculatePerimeter() << std::endl;
+		std::cout << "Shape " << i + 1 << " - Area: " << shapes[i]->getArea() << ", Perimeter: " << shapes[i]->getPerimeter() << std::endl;
 
 	return (0);
 }

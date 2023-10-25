@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:04:37 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:52:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:20:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ class Triangle : public Shape
 		Triangle(double s1, double s2, double s3, double b1, double h1) : side1(s1), side2(s2), side3(s3), base(b1), height(h1) {}
 		~Triangle() {}
 
-		double calculateArea() const
+		double getArea() const
 		{
 			return (base * height / 2);
 		}
 
-		double calculatePerimeter() const
+		double getPerimeter() const
 		{
 			return side1 + side2 + side3;
 		}

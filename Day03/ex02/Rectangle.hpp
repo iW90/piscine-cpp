@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:04:14 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:52:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:20:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class Rectangle : public Shape
 		Rectangle(double w, double h) : width(w), height(h) {}
 		~Rectangle() {}
 
-		double calculateArea() const
+		double getArea() const
 		{
 			return width * height;
 		}
 
-		double calculatePerimeter() const
+		double getPerimeter() const
 		{
 			return 2 * (width + height);
 		}

@@ -6,16 +6,44 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:48:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 07:49:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:39:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "employee.hpp"
-#include "employeeManagement.hpp"
-#include "hourlyEmployee.hpp"
-#include "salariedEmployee.hpp"
+#include "Employee.hpp"
+#include "EmployeeManagement.hpp"
+#include "Apprentice.hpp"
+#include "ContractEmployee.hpp"
+#include "TempWorker.hpp"
 
+int main() {
+    EmployeeManager manager;
+
+    TempWorker tempWorker(10);
+    ContractEmployee contractEmployee(12);
+    Apprentice apprentice(8, 20);
+
+    manager.addEmployee(&tempWorker);
+    manager.addEmployee(&contractEmployee);
+    manager.addEmployee(&apprentice);
+
+    // Simulate workdays
+    for (int day = 1; day <= 30; day++) {
+        std::cout << "Day " << day << ":" << std::endl;
+        manager.executeWorkday();
+    }
+
+    // Set vacation for ContractEmployee and school hours for Apprentice
+    contractEmployee.setVacation(20);
+    apprentice.goSchool(10);
+
+    // Calculate payroll
+    manager.calculatePayroll();
+
+    return 0;
+}
+/*
 int main()
 {
 	EmployeeManager* manager = new EmployeeManager();
@@ -47,6 +75,7 @@ int main()
 
 	return (0);
 }
+*/
 
 /*
 ** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./main

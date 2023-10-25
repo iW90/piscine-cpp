@@ -3,27 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ContractEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 15:29:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:36:28 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTRACT_EMPLOYEE_HPP
 # define CONTRACT_EMPLOYEE_HPP
 
+# include <iostream>
+# include "Employee.hpp"
+
 class ContractEmployee : public Employee
 {
 	private:
-		int vacationHours;
+		int hoursNotWorked;
 
 	public:
-		int executeWorkday();
-		void logVacationHours(int hours);
-		
-		ContractEmployee(int hours) : Employee(0), vacationHours(hours) {}
-		~ContractEmployee();
+		ContractEmployee(int hourlyValue) : Employee(hourlyValue), hoursNotWorked(0) {}
+
+		int executeWorkday()
+		{
+			hoursNotWorked += 7;
+			return 0;
+		}
+
+		void setVacation(int hours)
+		{
+			hoursNotWorked = std::min(hoursNotWorked, hours);
+		}
 };
 
 #endif

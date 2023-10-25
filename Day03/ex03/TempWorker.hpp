@@ -3,27 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   TempWorker.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 15:29:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:34:30 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEMP_WORKER_HPP
 # define TEMP_WORKER_HPP
 
+# include "Employee.hpp"
+# include <iostream>
+
 class TempWorker : public Employee
 {
 	private:
-		int totalWorkHours;
+		int hoursWorked;
 
 	public:
-		int executeWorkday();
-		void logWorkHours(int hours);
+		TempWorker(int hourlyValue) : Employee(hourlyValue), hoursWorked(0) {}
 
-		TempWorker(int hours) : Employee(0), totalWorkHours(hours) {}
-		~TempWorker();
+		int executeWorkday()
+		{
+			hoursWorked += 7;
+			return 7;
+		}
+
+		void mobilize(int hours)
+		{
+			hoursWorked = std::min(hoursWorked, hours);
+		}
 };
 
 #endif

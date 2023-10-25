@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   EmployeeManagement.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 16:29:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:47:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EMPLOYEE_MANAGEMENT_HPP
 # define EMPLOYEE_MANAGEMENT_HPP
 
-# include "employee.hpp"
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <Employee.hpp>
+
+class Employee;
 
 class EmployeeManager
 {
@@ -37,19 +40,23 @@ class EmployeeManager
 		{
 			for (size_t i = 0; i < employees.size(); ++i)
 			{
-				std::cout << "Worker " << i << " working.";
-				employees[i].
+				Employee* employee = employees[i];
+				employee->executeWorkday();
 			}
+
 		}
 
 		void calculatePayroll()
 		{
-			std::cout << "Payroll for the last complete month:" << std::endl;
-			for (Employee* employee : employees) {
-				int payroll = employee->executeWorkday() * 7; // Assuming one workday is 7 hours
-				std::cout << "Employee Salary: " << payroll << std::endl;
+			for (size_t i = 0; i < employees.size(); ++i)
+			{
+				Employee* employee = employees[i];
+				int totalPayment = employee->executeWorkday() * 7 * 4; // 7 hours a day for 4 weeks
+				std::cout << "Employee with hourly value $" << employee->getHourlyValue()
+						<< " earned $" << totalPayment << " in the last month." << std::endl;
 			}
 		}
 };
+
 
 #endif

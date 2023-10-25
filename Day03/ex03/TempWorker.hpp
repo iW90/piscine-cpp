@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TempWorker.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 13:29:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:56:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ class TempWorker : public Employee
 		int getWorkedHours() { return hoursWorked; }
 
 		void mobilize(int hours) { mobilized = hours > 7 ? 7 : hours; }
+
+		void cleanWorkedHours() { hoursWorked = 0; }
 };
 
 #endif

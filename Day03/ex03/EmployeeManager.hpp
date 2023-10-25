@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 11:11:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:57:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ class EmployeeManager
 		void executeWorkday()
 		{
 			for (size_t i = 0; i < employees.size(); ++i)
-			{
-				Employee* employee = employees[i];
-				employee->executeWorkday();
-			}
+				employees[i]->executeWorkday();
+		}
+
+		void cleanWorkedHours()
+		{
+			for (size_t i = 0; i < employees.size(); ++i)
+				employees[i]->cleanWorkedHours();
 		}
 
 		void calculatePayroll()

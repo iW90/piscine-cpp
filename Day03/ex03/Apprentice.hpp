@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:21 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 14:04:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:56:17 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class Apprentice : public Employee
 		void goSchool(int hours) { schoolHours = hours > 3 ? 3 : hours; }
 
 		void setVacation(int hours) { hoursNotWorked = hours > 4 ? 4 : hours; }
+
+		void cleanWorkedHours() { hoursWorked = 0; }
 };
 
 #endif

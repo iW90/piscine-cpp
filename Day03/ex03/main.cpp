@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:48:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 14:05:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:56:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main()
 	
 	// Calculate payroll
 	manager.calculatePayroll();
+	manager.cleanWorkedHours();
 
 	return 0;
 }

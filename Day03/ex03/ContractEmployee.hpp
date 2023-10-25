@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ContractEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 13:32:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:56:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ class ContractEmployee : public Employee
 		int getWorkedHours() { return hoursWorked; }
 
 		void setVacation(int hours) { hoursNotWorked = hours > 7 ? 7 : hours; }
+
+		void cleanWorkedHours() { hoursWorked = 0; }
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:48:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 09:54:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:08:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int main()
 
 	contractEmployee.setVacation(0);
 	apprentice.goSchool(0);
+
+	for (int day = 1; day <= 30; day++)
+        manager.executeWorkday();
 	
 	// Calculate payroll
 	manager.calculatePayroll();
@@ -39,7 +42,7 @@ int main()
 }
 
 /*
-** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./main
+** c++ -Wall -Wextra -Werror -std=c++98 -I . main.cpp && ./a.out
 */
 
 /*

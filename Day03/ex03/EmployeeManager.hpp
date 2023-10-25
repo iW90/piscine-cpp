@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EmployeeManager.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 09:44:11 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:11:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,8 @@ class EmployeeManager
 			for (size_t i = 0; i < employees.size(); ++i)
 			{
 				int totalPayment = 0;
-				Employee* employee = employees[i];
-				totalPayment += employee->executeWorkday() * 30;
-				std::cout << "Employee with hourly value $" << employee->getHourlyValue()
+				totalPayment += (employees[i]->getWorkedHours() * employees[i]->getHourlyValue());
+				std::cout << "Employee with hourly value $" << employees[i]->getHourlyValue()
 						<< " earned $" << totalPayment << " in the last month." << std::endl;
 			}
 		}

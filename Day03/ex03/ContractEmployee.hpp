@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ContractEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 09:47:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:20:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,20 @@ class ContractEmployee : public Employee
 {
 	private:
 		int hoursNotWorked;
+		int hoursWorked;
 
 	public:
-		ContractEmployee(int hourlyValue) : Employee(hourlyValue), hoursNotWorked(0) {}
+		ContractEmployee(int hourlyValue) : Employee(hourlyValue), hoursNotWorked(0), hoursWorked(0) {}
 
 		int executeWorkday()
 		{
-			int hoursWorked = 7 - hoursNotWorked;
+			int hours = 7 - hoursNotWorked;
+			hoursWorked += hours;
+			return hours;
+		}
+
+		int getWorkedHours()
+		{
 			return hoursWorked;
 		}
 

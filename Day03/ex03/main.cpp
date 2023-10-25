@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:48:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 12:01:12 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:05:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 
 	contractEmployee.setVacation(0);
 	apprentice.goSchool(0);
+	apprentice.setVacation(0);
 	tempWorker.mobilize(7);
 
 	for (int day = 1; day <= 30; day++)

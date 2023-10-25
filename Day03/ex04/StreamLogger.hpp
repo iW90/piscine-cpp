@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:40:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 22:53:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:55:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class StreamLogger : public ILogger
 
 
 // StreamLogger.cpp
-StreamLogger::StreamLogger(std::ostream& stream, const char* header, bool includeTimestamp) : outputStream(stream), header(header), includeTimestamp(includeTimestamp) {}
+StreamLogger::StreamLogger(std::ostream& stream, const char* header, bool includeTimestamp)
+	: outputStream(stream), header(header), includeTimestamp(includeTimestamp) {}
 
 void StreamLogger::write(const char* message)
 {

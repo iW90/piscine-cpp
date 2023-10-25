@@ -6,42 +6,43 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:48:42 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 23:39:44 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:31:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Employee.hpp"
-#include "EmployeeManagement.hpp"
+#include "EmployeeManager.hpp"
 #include "Apprentice.hpp"
 #include "ContractEmployee.hpp"
 #include "TempWorker.hpp"
 
-int main() {
-    EmployeeManager manager;
+int main()
+{
+	EmployeeManager manager;
 
-    TempWorker tempWorker(10);
-    ContractEmployee contractEmployee(12);
-    Apprentice apprentice(8, 20);
+	TempWorker tempWorker(10);
+	ContractEmployee contractEmployee(12);
+	Apprentice apprentice(8, 20);
 
-    manager.addEmployee(&tempWorker);
-    manager.addEmployee(&contractEmployee);
-    manager.addEmployee(&apprentice);
+	manager.addEmployee(&tempWorker);
+	manager.addEmployee(&contractEmployee);
+	manager.addEmployee(&apprentice);
 
-    // Simulate workdays
-    for (int day = 1; day <= 30; day++) {
-        std::cout << "Day " << day << ":" << std::endl;
-        manager.executeWorkday();
-    }
+	// Simulate workdays
+	for (int day = 1; day <= 30; day++) {
+		std::cout << "Day " << day << ":" << std::endl;
+		manager.executeWorkday();
+	}
 
-    // Set vacation for ContractEmployee and school hours for Apprentice
-    contractEmployee.setVacation(20);
-    apprentice.goSchool(10);
+	// Set vacation for ContractEmployee and school hours for Apprentice
+	contractEmployee.setVacation(20);
+	apprentice.goSchool(10);
 
-    // Calculate payroll
-    manager.calculatePayroll();
+	// Calculate payroll
+	manager.calculatePayroll();
 
-    return 0;
+	return 0;
 }
 /*
 int main()

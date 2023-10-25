@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 09:31:13 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:44:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ class EmployeeManager
 		{
 			for (size_t i = 0; i < employees.size(); ++i)
 			{
+				int totalPayment = 0;
 				Employee* employee = employees[i];
-				int totalPayment = employee->executeWorkday() * 7 * 4; // 7 hours a day for 4 weeks
+				totalPayment += employee->executeWorkday() * 30;
 				std::cout << "Employee with hourly value $" << employee->getHourlyValue()
 						<< " earned $" << totalPayment << " in the last month." << std::endl;
 			}

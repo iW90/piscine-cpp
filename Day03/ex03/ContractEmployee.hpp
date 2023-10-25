@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 23:36:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:47:53 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ class ContractEmployee : public Employee
 
 		int executeWorkday()
 		{
-			hoursNotWorked += 7;
-			return 0;
+			int hoursWorked = 7 - hoursNotWorked;
+			return hoursWorked;
 		}
 
 		void setVacation(int hours)
 		{
-			hoursNotWorked = std::min(hoursNotWorked, hours);
+			hoursNotWorked = hours;
 		}
 };
 

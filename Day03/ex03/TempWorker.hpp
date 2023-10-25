@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 23:34:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:50:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class TempWorker : public Employee
 
 		void mobilize(int hours)
 		{
-			hoursWorked = std::min(hoursWorked, hours);
+			hoursWorked = hours;
 		}
 };
 

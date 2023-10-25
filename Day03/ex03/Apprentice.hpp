@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:21 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 11:20:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:00:59 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,9 @@ class Apprentice : public Employee
 			return hours;
 		}
 
-		int getWorkedHours()
-		{
-			return hoursWorked;
-		}
+		int getWorkedHours() { return hoursWorked; }
 
-		void goSchool(int hours)
-		{
-			schoolHours = hours;
-		}
+		void goSchool(int hours) { schoolHours = hours; }
 };
 
 #endif

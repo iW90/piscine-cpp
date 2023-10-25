@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 11:19:56 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:17:59 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,21 @@ class TempWorker : public Employee
 {
 	private:
 		int hoursWorked;
+		int mobilized;
 
 	public:
 		TempWorker(int hourlyValue) : Employee(hourlyValue), hoursWorked(0) {}
 
-		int executeWorkday()
+		int executeWorkday() 
 		{
-			hoursWorked += 7;
-			return 7;
+			int hours = mobilized < 7 ? mobilized : 7;
+			hoursWorked += hours;
+			return hours;
 		}
 
-		int getWorkedHours()
-		{
-			return hoursWorked;
-		}
+		int getWorkedHours() { return hoursWorked; }
 
-		void mobilize(int hours)
-		{
-			hoursWorked = hours;
-		}
+		void mobilize(int hours) { mobilized = hours; }
 };
 
 #endif

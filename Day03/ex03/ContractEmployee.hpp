@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 11:20:52 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:18:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,14 @@ class ContractEmployee : public Employee
 
 		int executeWorkday()
 		{
-			int hours = 7 - hoursNotWorked;
+			int hours = 7 - hoursNotWorked > 0 ? 7 - hoursNotWorked : 0;
 			hoursWorked += hours;
 			return hours;
 		}
 
-		int getWorkedHours()
-		{
-			return hoursWorked;
-		}
+		int getWorkedHours() { return hoursWorked; }
 
-		void setVacation(int hours)
-		{
-			hoursNotWorked = hours;
-		}
+		void setVacation(int hours) { hoursNotWorked = hours; }
 };
 
 #endif

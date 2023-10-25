@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Command.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 14:14:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 12:04:29 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:09:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ class Command
 		virtual double	get_total_price()
 		{
 			double totalPrice = 0.0;
-			std::vector<Article>& articles = get_articles();
 			for (size_t i = 0; i < articles.size(); i++)
 				totalPrice += articles[i].price;
 			return (totalPrice);

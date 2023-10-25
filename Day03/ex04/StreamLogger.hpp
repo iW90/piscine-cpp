@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:40:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 22:55:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:01:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ILogger.hpp"
 # include <iostream>
-#include <ctime>
+# include <ctime>
 
 class StreamLogger : public ILogger
 {

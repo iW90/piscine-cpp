@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FileLogger.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:43:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 14:51:48 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:42:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ FileLogger::FileLogger(const char* filename, const char* header) : filename(file
 
 void FileLogger::write(const char* message)
 {
-	std::ofstream file(filename, std::ios::app);
+	std::fstream file(filename, std::ios::app);
 	if (file.is_open())
 	{
-		file << header << message << "\n";
+		if (header)
+			file << header;
+		file << message << "\n";
 		file.close();
 	}
 }

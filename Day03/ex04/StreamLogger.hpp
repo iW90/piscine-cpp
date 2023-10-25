@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   StreamLogger.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:40:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 14:36:44 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:53:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 
 # include "ILogger.hpp"
 # include <iostream>
+#include <ctime>
 
 class StreamLogger : public ILogger
 {
 	private:
 		std::ostream& outputStream;
 		const char* header;
+		bool includeTimestamp;
 
 	public:
-		StreamLogger(std::ostream& stream, const char* header = "");
+		StreamLogger(std::ostream& stream, const char* header = "", bool includeTimestamp = false);
 		void write(const char* message);
 };
 
@@ -31,10 +33,21 @@ class StreamLogger : public ILogger
 
 
 // StreamLogger.cpp
-StreamLogger::StreamLogger(std::ostream& stream, const char* header) : outputStream(stream), header(header) {}
+StreamLogger::StreamLogger(std::ostream& stream, const char* header, bool includeTimestamp) : outputStream(stream), header(header), includeTimestamp(includeTimestamp) {}
 
 void StreamLogger::write(const char* message)
 {
-	outputStream << header << message << std::endl;
+	if (includeTimestamp)
+	{
+		time_t rawtime;
+		struct tm* timeinfo;
+		char timestamp[20];
+		time(&rawtime);
+		timeinfo = localtime(&rawtime);
+		strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S ", timeinfo);
+		outputStream << timestamp;
+	}
+	if (header)
+		outputStream << header;
+	outputStream << message << std::endl;
 }
-

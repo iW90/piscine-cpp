@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:51:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 14:54:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 22:50:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@
 
 int main()
 {
-	// Crie instâncias de diferentes tipos de loggers
-	FileLogger fileLogger("log.txt", "File Logger: ");
-	StreamLogger consoleLogger(std::cerr, "Console Logger: ");
+	// Instâncias
+	FileLogger fileLogger1("log1.txt", "File Logger: ");
+	FileLogger fileLogger2("log2.txt");
+	StreamLogger consoleLogger1(std::cout, "Console Logger: ");
+	StreamLogger consoleLogger2(std::cout, "Console Logger: ", true);
 
-	// Crie um vetor de ILogger*
+	// Vetor de ILogger*
 	std::vector<ILogger*> loggers;
-	loggers.push_back(&fileLogger);
-	loggers.push_back(&consoleLogger);
+	loggers.push_back(&fileLogger1);
+	loggers.push_back(&fileLogger2);
+	loggers.push_back(&consoleLogger1);
+	loggers.push_back(&consoleLogger2);
 
 	// Crie uma lista de mensagens para registrar
 	const char* messages[] = {"Message 1", "Message 2", "Message 3"};

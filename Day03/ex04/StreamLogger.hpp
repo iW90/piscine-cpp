@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   StreamLogger.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:40:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 23:01:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:39:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ void StreamLogger::write(const char* message)
 	{
 		time_t rawtime;
 		struct tm* timeinfo;
-		char timestamp[20];
+		char timestamp[25];
+
 		time(&rawtime);
 		timeinfo = localtime(&rawtime);
-		strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S ", timeinfo);
+		size_t len = strftime(timestamp, sizeof(timestamp) - 1, "%Y-%m-%d %H:%M:%S", timeinfo);
+		timestamp[len] = '\0';
 		outputStream << timestamp;
 	}
 	if (header)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FileLogger.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:43:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 22:57:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:38:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ void FileLogger::write(const char* message)
 		{
 			time_t rawtime;
 			struct tm* timeinfo;
-			char timestamp[20];
+			char timestamp[25];
+			
 			time(&rawtime);
 			timeinfo = localtime(&rawtime);
-			strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S ", timeinfo);
+			size_t len = strftime(timestamp, sizeof(timestamp) - 1, "%Y-%m-%d %H:%M:%S", timeinfo);
+			timestamp[len] = '\0';
 			file << timestamp;
 		}
 		if (header)

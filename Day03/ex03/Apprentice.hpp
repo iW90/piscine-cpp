@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Apprentice.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:21 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 12:00:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:33:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Apprentice : public Employee
 {
 	private:
-		int schoolHours;
-		int hoursWorked;
+		int schoolHours;	//by day
+		int hoursWorked;	//total
 
 	public:
 		Apprentice(int hourlyValue) : Employee(hourlyValue), schoolHours(0), hoursWorked(0) {}
@@ -34,7 +34,7 @@ class Apprentice : public Employee
 
 		int getWorkedHours() { return hoursWorked; }
 
-		void goSchool(int hours) { schoolHours = hours; }
+		void goSchool(int hours) { schoolHours = hours > 7 ? 7 : hours; }
 };
 
 #endif

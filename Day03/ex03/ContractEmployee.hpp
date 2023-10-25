@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ContractEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:26:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 12:18:54 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:32:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@
 class ContractEmployee : public Employee
 {
 	private:
-		int hoursNotWorked;
-		int hoursWorked;
+		int hoursNotWorked;	//by day
+		int hoursWorked;	//total
 
 	public:
 		ContractEmployee(int hourlyValue) : Employee(hourlyValue), hoursNotWorked(0), hoursWorked(0) {}
 
 		int executeWorkday()
 		{
-			int hours = 7 - hoursNotWorked > 0 ? 7 - hoursNotWorked : 0;
+			int hours = 7 - hoursNotWorked;
 			hoursWorked += hours;
 			return hours;
 		}
 
 		int getWorkedHours() { return hoursWorked; }
 
-		void setVacation(int hours) { hoursNotWorked = hours; }
+		void setVacation(int hours) { hoursNotWorked = hours > 7 ? 7 : hours; }
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TempWorker.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:27:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/25 12:17:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:29:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@
 class TempWorker : public Employee
 {
 	private:
-		int hoursWorked;
-		int mobilized;
+		int mobilized;		//by day
+		int hoursWorked;	//total
 
 	public:
 		TempWorker(int hourlyValue) : Employee(hourlyValue), hoursWorked(0) {}
 
 		int executeWorkday() 
 		{
-			int hours = mobilized < 7 ? mobilized : 7;
+			int hours = mobilized;
 			hoursWorked += hours;
 			return hours;
 		}
 
 		int getWorkedHours() { return hoursWorked; }
 
-		void mobilize(int hours) { mobilized = hours; }
+		void mobilize(int hours) { mobilized = hours > 7 ? 7 : hours; }
 };
 
 #endif

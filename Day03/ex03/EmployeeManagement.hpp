@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:24:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 23:47:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/24 23:49:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ class EmployeeManager
 				Employee* employee = employees[i];
 				employee->executeWorkday();
 			}
-
 		}
 
 		void calculatePayroll()

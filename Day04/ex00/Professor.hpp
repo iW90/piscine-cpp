@@ -3,12 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Professor.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:45:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 16:45:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 09:10:35 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PROFESSOR_HPP
+# define PROFESSOR_HPP
+
+# include "Staff.hpp"
+
+class Course;
 
 class Professor : public Staff
 {
@@ -20,3 +27,5 @@ class Professor : public Staff
 		void doClass();
 		void closeCourse();
 };
+
+#endif

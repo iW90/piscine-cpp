@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Singleton.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:41:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:16:29 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/26 08:47:11 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/26 08:59:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#include <iostream>
 
-enum class FormType
-{
-	CourseFinished,
-	NeedMoreClassRoom,
-	NeedCourseCreation,
-	SubscriptionToCourse
-};
-
-class Form
+class Singleton
 {
 	private:
-		FormType _formType;
+		static Singleton* instance;
+		Singleton() {}
 
 	public:
-		Form(FormType p_formType);
-		virtual void execute() = 0;
-};
+		static Singleton& getInstance()
+		{
+			if (!instance)
+				instance = new Singleton;
+			return *instance;
+		}
 
-#endif
+		~Singleton()
+		{
+			delete instance;
+		}
+};

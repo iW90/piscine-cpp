@@ -3,12 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Room.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:38:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/24 16:38:15 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 09:04:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ROOM_HPP
+# define ROOM_HPP
+
+# include <vector>
+
+class Person;
 
 class Room
 {
@@ -21,6 +28,7 @@ class Room
 		bool canEnter(Person*);
 		void enter(Person*);
 		void exit(Person*);
-		
 		void printOccupant();
 };
+
+#endif

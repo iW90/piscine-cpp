@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RoomList.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:45 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:00:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:22:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "SchoolLists.hpp"
 # include "Room.hpp"
 
-class RoomList : public SchoolLists<Room>
+class RoomList : public Singleton<RoomList, Room*>
 {
 };
 

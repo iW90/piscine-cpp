@@ -3,48 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   Singleton.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 09:10:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 12:08:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:21:15 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SINGLETON_HPP
-#define SINGLETON_HPP
+# define SINGLETON_HPP
 
-template <class T>
+template<typename T, typename ItemType>
 class Singleton
 {
+	private:
+		Singleton() {};
+		std::vector<ItemType> items;
+
 	protected:
-		static T* item;
-		Singleton() {}
+		~Singleton() {};
+		Singleton(const Singleton&) {}
 
 	public:
-		static T& getItem();
-		virtual ~Singleton();
+		static T& getInstance()
+		{
+			static T instance;
+			return instance;
+		}
+
+		void addItem(ItemType item)
+		{
+			items.push_back(item);
+		}
+
+		std::vector<ItemType> getList() const
+		{
+			return items;
+		}
 };
-
-// Templates
-template <class T>
-T* Singleton<T>::item = 0;
-
-template <class T>
-T& Singleton<T>::getItem()
-{
-	if (!item)
-		item = new T;
-	return *item;
-}
-
-template <class T>
-Singleton<T>::~Singleton()
-{
-	if (item)
-	{
-		delete item;
-		item = NULL;
-	}
-}
 
 #endif

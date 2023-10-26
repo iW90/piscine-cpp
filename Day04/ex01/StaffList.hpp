@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   StaffList.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:26 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:00:36 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:23:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "SchoolLists.hpp"
 # include "Staff.hpp"
 
-class StaffList : public SchoolLists<Staff>
+class StaffList : public Singleton<StaffList, Staff*>
 {
 };
 

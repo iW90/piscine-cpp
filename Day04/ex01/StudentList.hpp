@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   StudentList.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 12:04:10 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:23:23 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@
 # include "SchoolLists.hpp"
 # include "Student.hpp"
 
-class StudentList : public SchoolLists<Student>
+class StudentList : public Singleton<StudentList, Student*>
 {
-	public:
-		static StudentList& getItem()
-		{
-			static StudentList instance;
-			return instance;
-		}
 };
 
 #endif

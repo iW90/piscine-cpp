@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Room.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:38:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:37:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:05:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ class Person;
 class Room
 {
 	private:
-		long long ID;
+		int ID;
+		static int nextID;
 		std::vector<Person*> _occupants;
 
 	public:
-		Room() {}
+		Room() : ID(nextID++) {}
 		~Room() {}
 		bool canEnter(Person*);
 		void enter(Person*);

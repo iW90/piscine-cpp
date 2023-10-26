@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Headmaster.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:44:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:37:08 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:44:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include "Staff.hpp"
 # include <vector>
+
+enum class Event
+{
+	RingBell
+};
 
 class Form;
 

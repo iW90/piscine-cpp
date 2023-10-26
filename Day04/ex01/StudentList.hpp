@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Person.hpp                                         :+:      :+:    :+:   */
+/*   StudentList.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:40:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:28:13 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/26 10:56:59 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/26 10:57:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PERSON_HPP
-#define PERSON_HPP
+#ifndef STUDENTLIST_HPP
+# define STUDENTLIST_HPP
 
-#include <string>
+# include "SchoolLists.hpp"
+# include "Student.hpp"
 
-class Room;
-
-class Person
+class StudentList : public SchoolLists<Student>
 {
-	private:
-		std::string _name;
-		Room* _currentRoom;
-
-	public:
-		Person(std::string p_name) : _name(p_name) {};
-		~Person() {}
-		Room* getRoom() { return _currentRoom; }
-		void setRoom(Room* room) { _currentRoom = room; }
-		std::string getName() { return _name; }
-		void setName(std::string name) { _name = name; }
 };
 
 #endif

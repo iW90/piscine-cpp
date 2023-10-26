@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:37:26 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:03:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:31:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Course
 		int _maximumNumberOfStudent;
 
 	public:
-		Course(std::string p_name);
+		Course(std::string p_name) : _name(p_name) {};
+		~Course() {}
 		void assign(Professor* p_professor);
 		void subscribe(Student* p_student);
 };

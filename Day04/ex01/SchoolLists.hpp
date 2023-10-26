@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Person.hpp                                         :+:      :+:    :+:   */
+/*   SchoolLists.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:40:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:28:13 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/26 09:41:19 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/26 10:52:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PERSON_HPP
-#define PERSON_HPP
+#ifndef SCHOOLLISTS_HPP
+# define SCHOOLLISTS_HPP
 
-#include <string>
+# include "Singleton.hpp"
+# include <vector>
 
-class Room;
-
-class Person
+template <class T>
+class SchoolLists : public Singleton<SchoolLists<T> >
 {
-	private:
-		std::string _name;
-		Room* _currentRoom;
+	protected:
+		std::vector<T*> items;
 
 	public:
-		Person(std::string p_name) : _name(p_name) {};
-		~Person() {}
-		Room* getRoom() { return _currentRoom; }
-		void setRoom(Room* room) { _currentRoom = room; }
-		std::string getName() { return _name; }
-		void setName(std::string name) { _name = name; }
+		void addItem(T* item);
+		T* getItem(int index);
+		void removeItem(T* item);
 };
 
 #endif

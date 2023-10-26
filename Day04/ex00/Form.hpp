@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:41:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:16:29 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:36:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class Form
 		FormType _formType;
 
 	public:
-		Form(FormType p_formType);
+		Form(FormType p_formType) : _formType(p_formType) {}
+		~Form() {}
 		virtual void execute() = 0;
 };
 

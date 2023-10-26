@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:39:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:05:42 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:38:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class SecretarialOffice : public Room
 		std::vector<Form*> _archivedForms;
 
 	public:
-		SecretarialOffice();
+		SecretarialOffice() {}
+		~SecretarialOffice() {}
 };
 
 #endif

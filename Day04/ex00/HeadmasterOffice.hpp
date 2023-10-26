@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:39:25 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:06:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:37:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class HeadmasterOffice : public Room
 {
 	public:
-		HeadmasterOffice();
+		HeadmasterOffice() {}
+		~HeadmasterOffice() {}
 };
 
 #endif

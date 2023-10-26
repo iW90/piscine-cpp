@@ -1,51 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Singleton.hpp                                      :+:      :+:    :+:   */
+/*   SchoolLists.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 09:10:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 10:49:28 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/26 09:44:31 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/26 10:48:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SINGLETON_HPP
-#define SINGLETON_HPP
+#include "SchoolLists.hpp"
 
 template <class T>
-class Singleton
+void SchoolLists<T>::addItem(T* item)
 {
-	protected:
-		static T* item;
-		Singleton() {}
-
-	public:
-		static T& getItem();
-		virtual ~Singleton();
-};
-
-
-// Templates
-template <class T>
-T* Singleton<T>::item = 0;
-
-template <class T>
-T& Singleton<T>::getItem()
-{
-	if (!item)
-		item = new T;
-	return *item;
+	items.push_back(item);
 }
 
 template <class T>
-Singleton<T>::~Singleton()
+T* SchoolLists<T>::getItem(int index)
 {
-	if (item)
+	if (index >= 0 && index < items.size())
+		return items[index];
+	return NULL;
+}
+
+template <class T>
+void SchoolLists<T>::removeItem(T* item)
+{
+	for (size_t i = 0; i < items.size(); ++i)
 	{
-		delete item;
-		item = NULL;
+		if (items[i] == item)
+		{
+			items.erase(items.begin() + i);
+			return; // Elemento encontrado e removido
+		}
 	}
 }
-
-#endif

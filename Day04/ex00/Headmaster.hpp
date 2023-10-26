@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:44:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:09:18 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:37:08 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Headmaster : public Staff
 		std::vector<Form*> _formToValidate;
 
 	public:
+		Headmaster(std::string p_name) : Staff(p_name) {}
+		~Headmaster() {}
 		void receiveForm(Form* p_form);
 };
 

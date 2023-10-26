@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:40:37 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:06:47 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:36:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class Courtyard : public Room
 {
 	public:
-		Courtyard();
+		Courtyard() {}
+		~Courtyard() {}
 };
 
 #endif

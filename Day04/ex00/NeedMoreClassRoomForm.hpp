@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:42:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 09:15:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:33:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class NeedMoreClassRoomForm : public Form
 	private:
 
 	public:
+		NeedMoreClassRoomForm(FormType _formType) : Form(_formType) {}
+		~NeedMoreClassRoomForm() {}
 		void execute();
 };
 

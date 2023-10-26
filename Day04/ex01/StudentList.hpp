@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 10:57:11 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:04:10 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 class StudentList : public SchoolLists<Student>
 {
+	public:
+		static StudentList& getItem()
+		{
+			static StudentList instance;
+			return instance;
+		}
 };
 
 #endif

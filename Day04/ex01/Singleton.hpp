@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 09:10:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 10:49:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:08:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Singleton
 		static T& getItem();
 		virtual ~Singleton();
 };
-
 
 // Templates
 template <class T>

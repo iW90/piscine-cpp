@@ -1,3 +1,4 @@
+
 //If you don't know what those 2 lines are, you should look for forward declaration
 class Student;
 class Professor;
@@ -199,4 +200,3 @@ enum class Event
 {
 	RingBell
 };
-

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:59:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:50:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:53:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main()
 {
 	// Crie instâncias únicas das listas
 	StudentList& students = StudentList::getItem();
-	StaffList staff;
-	CourseList courses;
-	RoomList rooms;
+	StaffList& staff = StaffList::getItem();
+	CourseList& courses = CourseList::getItem();
+	RoomList& rooms = RoomList::getItem();
 
 	// Popule as listas manualmente (insira elementos)
 	students.addItem(new Student("John"));

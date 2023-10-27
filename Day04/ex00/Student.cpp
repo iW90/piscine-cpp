@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Student.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:07:45 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 08:04:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:45:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Método para um aluno participar de uma aula
 void Student::attendClass(Classroom* p_classroom)
 {
-	if (p_classroom && !getRoom() && p_classroom->canEnter(this))
+	if (p_classroom && !getRoom())
 	{
 		setRoom(p_classroom);
 		p_classroom->enter(this);

@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Secretary.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:55:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 09:10:50 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:20:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Secretary.hpp"
 
+
 std::unique_ptr<Form> Secretary::createForm(\
-	FormType p_formType,\
-	const std::string& arg1 = "",\
-	const std::string& arg2 = "",\
-	int arg3 = 0,\
-	int arg4 = 0)
+FormType p_formType,\
+ const std::string& arg1 = "",\
+ const std::string& arg2 = "",\
+ int arg3 = 0,\
+ int arg4 = 0)
 {
 	switch(p_formType)
 	{

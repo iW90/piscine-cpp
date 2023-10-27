@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NeedCourseCreationForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:35:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 09:10:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:23:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ NeedCourseCreationForm::NeedCourseCreationForm(std::string name, int numberOfCla
 	_responsable(NULL), \
 	_numberOfClassToGraduate(numberOfClassToGraduate), \
 	_maximumNumberOfStudent(maximumNumberOfStudent) \
-	{}
+	{(void)_responsable;(void)_numberOfClassToGraduate; (void)_maximumNumberOfStudent;}
 
 void	NeedCourseCreationForm::execute()
 {

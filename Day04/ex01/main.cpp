@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:59:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 00:10:56 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:59:17 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	main(void)
 	CourseList::getInstance().addItem(course1);
 	CourseList::getInstance().addItem(course2);
 
-	Room* room1 = new Room("Hallway");
-	Room* room2 = new Room("Dinning Hall");
+	Room* room1 = new Room();
+	Room* room2 = new Room();
 	RoomList::getInstance().addItem(room1);
 	RoomList::getInstance().addItem(room2);
 

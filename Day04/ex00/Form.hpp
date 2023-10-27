@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:41:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 22:32:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:29:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Form
 		~Form() {}
 		virtual void execute() = 0;
 		bool		isSigned() { return _isSigned; }
+		void		signDocument() { _isSigned = true; }
 		FormType	getType() const { return _formType; }
 };
 

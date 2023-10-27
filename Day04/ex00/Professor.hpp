@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:45:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 23:49:15 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:55:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ class Professor : public Staff, public Observer
 		void assignCourse(Course* p_course);
 		void doClass();
 		void closeCourse();
-		void update(Event event)
+		void setFreeTime(bool freeTime) { isFreeTime = freeTime; }
+		void update(Event event, bool isBellRinging)
 		{
 			if (event == Event::RingBell)
+			{
 				std::cout << "Professor " << getName() << " is " << (isFreeTime ? "going to StaffRestRoom" : "returning to class") << std::endl;
+				setFreeTime(isBellRinging);
+			}
 		}
-		void setFreeTime(bool freeTime) { isFreeTime = freeTime; }
 };
 
 #endif

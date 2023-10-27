@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Observer.hpp                                       :+:      :+:    :+:   */
+/*   Headmaster.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 23:17:58 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 00:49:15 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/27 00:43:55 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/27 00:45:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OBSERVER_HPP
-# define OBSERVER_HPP
+#include "Headmaster.hpp"
 
-enum class Event;
-
-class Observer
+void Headmaster::signLastForm()
 {
-	public:
-		virtual void update(Event event, bool isBellRinging) = 0;
-};
+	if (!_formToValidate.empty())
+		_formToValidate.back()->signDocument();
+}
 
-#endif
+void Headmaster::dispatchLastForm()
+{
+	if (!_formToValidate.empty())
+	{
+		_formToValidate.back()->execute();
+		_secretary.archiveForm(std::move(_formToValidate.back()));
+		_formToValidate.pop_back(); // remove it from the list after dispatching
+	}
+}

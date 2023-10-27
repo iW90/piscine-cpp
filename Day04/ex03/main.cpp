@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 23:51:26 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 23:52:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:48:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 int main()
 {
 	// Crie um Headmaster
-	Headmaster headmaster("Director");
+	Secretary secretary("Sonia");
+	Headmaster headmaster("Director", secretary);
 
 	// Crie alguns Students
 	Student student1("Alice");
@@ -33,11 +34,6 @@ int main()
 
 	// Tocar o sino para iniciar o tempo livre
 	headmaster.ringBell();
-	headmaster.startFreeTime();
-
-	// Tocar o sino para encerrar o tempo livre
-	headmaster.ringBell();
-	headmaster.endFreeTime();
 
 	return 0;
 }

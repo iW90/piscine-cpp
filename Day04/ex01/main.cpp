@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:59:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 16:36:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 00:10:56 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,77 +15,39 @@
 #include "CourseList.hpp"
 #include "RoomList.hpp"
 
-int main()
-{
-	// Crie instâncias únicas das listas
-	StudentList& students = StudentList::getItem();
-	StaffList& staff = StaffList::getItem();
-	CourseList& courses = CourseList::getItem();
-	RoomList& rooms = RoomList::getItem();
-
-	// Popule as listas manualmente (insira elementos)
-	students.addItem(new Student("John"));
-	students.addItem(new Student("Alice"));
-	staff.addItem(new Staff("Professor Smith"));
-	courses.addItem(new Course("Math 101"));
-	rooms.addItem(new Room());
-
-	// Recupere elementos das listas
-	Student* student1 = students.getItem(0);
-	Staff* staff1 = staff.getItem(0);
-	Course* course1 = courses.getItem(0);
-	Room* room1 = rooms.getItem(0);
-
-	// Faça algo com os elementos recuperados, se necessário
-
-	// Lembre-se de liberar a memória alocada para os elementos, se necessário
-	delete student1;
-	delete staff1;
-	delete course1;
-	delete room1;
-
-	return 0;
-}
-
-
-int    main(void)
+int	main(void)
 {
 	Student* student1 = new Student("Harry");
 	Student* student2 = new Student("Hermione");
 	Student* student3 = new Student("Ron");
-	StudentList::getInstance().add(student1);
-	StudentList::getInstance().add(student2);
-	StudentList::getInstance().add(student3);
+	StudentList::getInstance().addItem(student1);
+	StudentList::getInstance().addItem(student2);
+	StudentList::getInstance().addItem(student3);
 
 	std::cout << "Student list:" << std::endl;
-	auto students = StudentList::getInstance().getAll();
+	auto students = StudentList::getInstance().getList();
 	for(auto student : students)
 		std::cout << student->getName() << std::endl;
 
-	Staff *staff1 = new Staff("Adelaide");
-	Staff *staff2 = new Staff("Bucileide");
-	StaffList::getInstance().add(staff1);
-	StaffList::getInstance().add(staff2);
+	Staff *staff1 = new Staff("Hagrid");
+	Staff *staff2 = new Staff("Argus");
+	StaffList::getInstance().addItem(staff1);
+	StaffList::getInstance().addItem(staff2);
 
 	std::cout << "Staff list:" << std::endl;
-	auto staffs = StaffList::getInstance().getAll();
+	auto staffs = StaffList::getInstance().getList();
 	for(auto staffs : staffs)
 		std::cout << staffs->getName() << std::endl;
 
-	Course* course1 = new Course("Curso A");
-	Course* course2 = new Course("Curso B");
-	CourseList::getInstance().add(course1);
-	CourseList::getInstance().add(course2);
+	Course* course1 = new Course("Potions");
+	Course* course2 = new Course("Charms");
+	CourseList::getInstance().addItem(course1);
+	CourseList::getInstance().addItem(course2);
 
-	Room* room1 = new Room();
-	Room* room2 = new Room();
-
-	room1.assignCourse(course1);
-	room1.assignCourse(course2);
-	
-	RoomList::getInstance().add(room1);
-	RoomList::getInstance().add(room2);
-
+	Room* room1 = new Room("Hallway");
+	Room* room2 = new Room("Dinning Hall");
+	RoomList::getInstance().addItem(room1);
+	RoomList::getInstance().addItem(room2);
 
 	StudentList& list1 = StudentList::getInstance();
 	StudentList& list2 = StudentList::getInstance();
@@ -97,8 +59,16 @@ int    main(void)
 		std::cout << "to different instances! Oops." << std::endl;
 
 	StaffList& list3 = StaffList::getInstance();
+	StaffList& list4 = StaffList::getInstance();
 
-		
+	std::cout << "Both StaffList references point ";
+	if(&list3 == &list4)
+		std::cout << "to the same instance." << std::endl;
+	else
+		std::cout << "to different instances! Oops." << std::endl;
+
+	std::cout << "List1" << &list1 << std::endl;
+	std::cout << "List3" << &list3 << std::endl;
 
 	delete student1;
 	delete student2;

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:41:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:36:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:32:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ enum class FormType
 class Form
 {
 	private:
-		FormType _formType;
+		FormType	_formType;
+		bool		_isSigned;
 
 	public:
-		Form(FormType p_formType) : _formType(p_formType) {}
+		Form(FormType p_formType) : _isSigned(false), _formType(p_formType) {}
 		~Form() {}
 		virtual void execute() = 0;
+		bool		isSigned() { return _isSigned; }
+		FormType	getType() const { return _formType; }
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Classroom.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:38:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 14:34:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:20:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Classroom : public Room
 	public:
 		Classroom() : _currentCourse (0) {}
 		~Classroom() {}
-		void assignCourse(Course* p_course) { _currentCourse = p_course };
+		void assignCourse(Course* p_course) { _currentCourse = p_course; }
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:43:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:33:50 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:42:59 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class SubscriptionToCourseForm : public Form
 	public:
 		SubscriptionToCourseForm(FormType _formType) : Form(_formType) {}
 		~SubscriptionToCourseForm() {}
-		void execute();
+		virtual void execute();
 };
 
 #endif

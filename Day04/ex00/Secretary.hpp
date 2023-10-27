@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:44:43 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:38:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 23:02:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 # define SECRETARY_HPP
 
 # include "Staff.hpp"
+# include "Form.hpp"
+# include <iostream>
+# include <memory>
+# include "CourseFinishedForm.hpp"
+# include "NeedMoreClassRoomForm.hpp"
+# include "NeedCourseCreationForm.hpp"
+# include "SubscriptionToCourseForm.hpp"
 
-class FormType;
+class Form;
 
 class Secretary : public Staff
 {
 	public:
 		Secretary(std::string p_name) : Staff(p_name) {}
 		~Secretary() {}
-		Form* createForm(FormType p_formType);
+		std::unique_ptr<Form>	createForm(FormType p_formType);
 		void archiveForm();
 };
 

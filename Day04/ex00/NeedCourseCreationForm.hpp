@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NeedCourseCreationForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:42:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 14:46:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:42:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define NEED_COURSE_CREATION_FORM_HPP
 
 # include "Form.hpp"
+# include <string>
+
+class Professor;
 
 class NeedCourseCreationForm : public Form
 {
@@ -24,11 +27,8 @@ class NeedCourseCreationForm : public Form
 		int _maximumNumberOfStudent;
 
 	public:
-		NeedCourseCreationForm(FormType _formType, std::string name, Professor* responsable, int numberOfClassToGraduate, int maximumNumberOfStudent)
-			: Form(_formType), _name(name), _responsable(responsable), _numberOfClassToGraduate(numberOfClassToGraduate), _maximumNumberOfStudent(maximumNumberOfStudent)
-			{
-				//verificar se existem ClassRooms livres.
-			}
+		NeedCourseCreationForm(FormType _formType, std::string name, Professor* responsable, int numberOfClassToGraduate, int maximumNumberOfStudent);
+		virtual void	execute();
 };
 
 #endif

@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Singleton.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 09:10:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 16:21:15 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 23:03:45 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SINGLETON_HPP
 # define SINGLETON_HPP
+
+# include <vector>
 
 template<typename T, typename ItemType>
 class Singleton

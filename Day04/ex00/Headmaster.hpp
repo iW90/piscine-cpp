@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Headmaster.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:44:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 15:44:41 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:34:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Staff.hpp"
 # include <vector>
+# include <memory>
 
 enum class Event
 {
@@ -26,12 +27,15 @@ class Form;
 class Headmaster : public Staff
 {
 	private:
-		std::vector<Form*> _formToValidate;
+		std::vector<std::unique_ptr<Form>>	_formToValidate;
 
 	public:
 		Headmaster(std::string p_name) : Staff(p_name) {}
 		~Headmaster() {}
-		void receiveForm(Form* p_form);
+		void	receiveForm(std::unique_ptr<Form> p_form)
+		{
+			_formToValidate.push_back(std::move(p_form));
+		}
 };
 
 #endif

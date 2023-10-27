@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   StudentList.hpp                                    :+:      :+:    :+:   */
+/*   RoomList.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 10:56:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 16:23:23 by inwagner         ###   ########.fr       */
+/*   Created: 2023/10/26 22:54:19 by inwagner          #+#    #+#             */
+/*   Updated: 2023/10/26 23:06:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STUDENTLIST_HPP
-# define STUDENTLIST_HPP
+#ifndef ROOMLIST_HPP
+# define ROOMLIST_HPP
 
-# include "SchoolLists.hpp"
-# include "Student.hpp"
+# include "Singleton.hpp"
+# include "Room.hpp"
 
-class StudentList : public Singleton<StudentList, Student*>
+class RoomList : public Singleton<RoomList, Room*>
 {
 };
 

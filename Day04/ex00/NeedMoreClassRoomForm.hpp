@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:42:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 11:33:41 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:51:30 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 # define NEED_MORE_CLASS_ROOM_FORM_HPP
 
 # include "Form.hpp"
+# include <string>
 
 class NeedMoreClassRoomForm : public Form
 {
 	private:
+		std::string	courseName;
+		int			currentAttendance;
+		int			expectedIncrease;
 
 	public:
-		NeedMoreClassRoomForm(FormType _formType) : Form(_formType) {}
+		NeedMoreClassRoomForm(FormType _formType, std::string& cName, int current, int expected);
 		~NeedMoreClassRoomForm() {}
-		void execute();
+		virtual void	execute();
 };
 
 #endif

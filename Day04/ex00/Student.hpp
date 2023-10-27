@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Student.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:43:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 15:03:56 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/26 23:09:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STUDENT_HPP
 # define STUDENT_HPP
 
+# include <iostream>
 # include "Person.hpp"
 # include "Classroom.hpp"
 # include "Course.hpp"

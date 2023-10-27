@@ -6,17 +6,17 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:35:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 08:58:12 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:10:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "NeedCourseCreationForm.hpp"
 # include <iostream>
 
-NeedCourseCreationForm::NeedCourseCreationForm(std::string name, Professor* responsable, int numberOfClassToGraduate, int maximumNumberOfStudent)
+NeedCourseCreationForm::NeedCourseCreationForm(std::string name, int numberOfClassToGraduate, int maximumNumberOfStudent)
 	: Form(FormType::NeedCourseCreation), \
 	_name(name), \
-	_responsable(responsable), \
+	_responsable(NULL), \
 	_numberOfClassToGraduate(numberOfClassToGraduate), \
 	_maximumNumberOfStudent(maximumNumberOfStudent) \
 	{}

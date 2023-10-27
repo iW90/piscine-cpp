@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:42:28 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 08:53:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:12:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class NeedMoreClassRoomForm : public Form
 		int			expectedIncrease;
 
 	public:
-		NeedMoreClassRoomForm(std::string& cName, int current, int expected);
+		NeedMoreClassRoomForm(const std::string& cName, int current, int expected);
 		~NeedMoreClassRoomForm() {}
 		virtual void	execute();
 };

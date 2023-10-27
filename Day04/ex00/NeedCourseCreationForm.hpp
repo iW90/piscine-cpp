@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:42:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 08:53:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:10:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class NeedCourseCreationForm : public Form
 		int _maximumNumberOfStudent;
 
 	public:
-		NeedCourseCreationForm(std::string name, Professor* responsable, int numberOfClassToGraduate, int maximumNumberOfStudent);
+		NeedCourseCreationForm(std::string name, int numberOfClassToGraduate, int maximumNumberOfStudent);
 		virtual void	execute();
 };
 

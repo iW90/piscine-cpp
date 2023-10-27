@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 13:55:12 by maalexan          #+#    #+#              #
-#    Updated: 2023/10/27 11:13:36 by inwagner         ###   ########.fr        #
+#    Updated: 2023/10/27 11:41:01 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ FUN			:=	main.cpp \
 				Secretary.cpp \
 				Student.cpp \
 				Bell.cpp \
+				Room.cpp \
 				Headmaster.cpp \
 				Person.cpp \
 				Secretary.cpp

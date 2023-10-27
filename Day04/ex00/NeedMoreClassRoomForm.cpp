@@ -6,15 +6,15 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:48:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 22:52:06 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:53:13 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "NeedMoreClassRoomForm.hpp"
 # include <iostream>
 
-NeedMoreClassRoomForm::NeedMoreClassRoomForm(FormType _formType, std::string& cName, int current, int expected) : 
-	Form(_formType),
+NeedMoreClassRoomForm::NeedMoreClassRoomForm(std::string& cName, int current, int expected) : 
+	Form(FormType::NeedMoreClassRoom),
 	courseName(cName),
 	currentAttendance(current),
 	expectedIncrease(expected)

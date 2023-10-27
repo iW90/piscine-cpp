@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 09:10:52 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/26 23:03:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:43:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ template<typename T, typename ItemType>
 class Singleton
 {
 	private:
-		Singleton() {};
 		std::vector<ItemType> items;
 
 	protected:
+		Singleton() {};
 		~Singleton() {};
 		Singleton(const Singleton&) {}
 

@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 13:55:12 by maalexan          #+#    #+#              #
-#    Updated: 2023/10/26 23:17:06 by inwagner         ###   ########.fr        #
+#    Updated: 2023/10/27 08:37:02 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,11 @@ FUN			:=	main.cpp \
 				NeedCourseCreationForm.cpp \
 				NeedMoreClassRoomForm.cpp \
 				Secretary.cpp \
-				Student.cpp
+				Student.cpp \
+				Bell.cpp \
+				Headmaster.cpp \
+				Person.cpp \
+				Secretary.cpp
 
 # Object files
 OBJ			:=	$(FUN:%.cpp=$(OBJ_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:07:45 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 01:28:29 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:04:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,34 +42,4 @@ Course* Student::searchCourse(Course* p_course)
 void Student::graduate(Course* p_course)
 {
 	(void)p_course;
-}
-
-// Método Pocotó
-void Student::update(Event event, bool isBellRinging)
-{
-	if (event == Event::RingBell)
-	{
-		std::cout << "Student " << getName() << " is " << (isFreeTime ? "going to Courtyard" : "returning to class") << std::endl;
-		setFreeTime(isBellRinging);
-		RoomList& roomInstance = RoomList::getInstance();
-		std::vector<Room*> roomList = roomInstance.getList();
-
-		//Xtreme Go Horse, nem sei se funciona
-		for (int i = 0; i < roomList.size(); ++i)
-		{
-			for (int j = 0; j < roomList[i]->_occupants.size(); ++j)
-			{
-				if (isFreeTime && this == roomList[i]->_occupants[j])
-				{
-					roomList[i]->exit(this);
-					room_out = roomList[i];
-				}
-				else if (!isFreeTime && roomList[i] == room_out)
-				{
-					roomList[i]->enter(this);
-					room_out = NULL;
-				}
-			}
-		}
-	}
 }

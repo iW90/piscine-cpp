@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:44:43 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 01:11:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:01:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Secretary : public Staff
 		Secretary(std::string p_name) : Staff(p_name) {}
 		~Secretary() {}
 		void archiveForm(std::unique_ptr<Form>) {};
-		std::unique_ptr<Form>	createForm(FormType p_formType, const std::string& arg1, const std::string& arg2, int arg3, int arg4);
+		std::unique_ptr<Form> createForm(FormType p_formType, const std::string& arg1, const std::string& arg2, int arg3, int arg4);
 };
 
 #endif

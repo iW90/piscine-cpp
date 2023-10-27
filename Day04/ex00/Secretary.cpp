@@ -6,13 +6,18 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:55:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 01:10:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 09:01:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Secretary.hpp"
 
-std::unique_ptr<Form> Secretary::createForm(FormType p_formType, const std::string& arg1 = "", const std::string& arg2 = "", int arg3 = 0, int arg4 = 0)
+std::unique_ptr<Form> Secretary::createForm(\
+	FormType p_formType,\
+	const std::string& arg1 = "",\
+	const std::string& arg2 = "",\
+	int arg3 = 0,\
+	int arg4 = 0)
 {
 	switch(p_formType)
 	{

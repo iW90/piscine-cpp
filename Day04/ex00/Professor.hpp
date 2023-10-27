@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:45:08 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 01:02:25 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:33:35 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 class Course;
 
-class Professor : public Staff, public Observer
+class Professor : public Staff
 {
 	private:
 		Course* _currentCourse;

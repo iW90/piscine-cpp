@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:41:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 00:29:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:44:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form
 		bool		_isSigned;
 
 	public:
-		Form(FormType p_formType) : _isSigned(false), _formType(p_formType) {}
+		Form(FormType p_formType) : _formType(p_formType), _isSigned(false) {}
 		~Form() {}
 		virtual void execute() = 0;
 		bool		isSigned() { return _isSigned; }

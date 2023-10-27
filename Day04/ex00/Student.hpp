@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:43:46 by inwagner          #+#    #+#             */
-/*   Updated: 2023/10/27 01:29:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/10/27 08:33:15 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,18 @@
 # include "Bell.hpp"
 # include "RoomList.hpp"
 
-class Student : public Person, public Observer
+class Student : public Person
 {
 	private:
 		std::vector<Course*> _subscribedCourses;
-		bool isFreeTime;
-		Room *room_out;
 
 	public:
-		Student(std::string p_name)  : Person(p_name), isFreeTime(false), room_out(NULL) {}
+		Student(std::string p_name)  : Person(p_name) {}
 		~Student() {}
 		Course* searchCourse(Course* p_course);
 		void attendClass(Classroom* p_classroom);
 		void exitClass();
 		void graduate(Course* p_course);
-		void setFreeTime(bool freeTime) { isFreeTime = freeTime; }
-		void update(Event event, bool isBellRinging);
 };
 
 #endif
